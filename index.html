@@ -77,99 +77,7 @@
 
 	<body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen pt-20">
 		<!-- Navigation Bar -->
-		<nav
-			class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/80 border-b border-gray-200/50 shadow-sm">
-			<div class="container mx-auto px-6">
-				<div class="flex items-center justify-between h-16">
-					<!-- Logo -->
-					<a href="index.html" class="flex items-center space-x-2 group">
-						<span class="text-2xl">📚</span>
-						<span
-							class="font-bold text-gray-800 group-hover:text-indigo-600 transition-colors"
-							>Guides Office</span
-						>
-					</a>
-
-					<!-- Menu Items -->
-					<div class="flex items-center space-x-6">
-						<!-- Accueil -->
-						<a
-							href="index.html"
-							class="text-gray-700 hover:text-indigo-600 font-medium transition-colors">
-							Accueil
-						</a>
-
-						<!-- Dropdown Guides -->
-						<div class="relative dropdown">
-							<button
-								class="flex items-center space-x-1 text-gray-700 hover:text-indigo-600 font-medium transition-colors">
-								<span>Guides</span>
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									class="h-4 w-4"
-									fill="none"
-									viewBox="0 0 24 24"
-									stroke="currentColor">
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M19 9l-7 7-7-7" />
-								</svg>
-							</button>
-
-							<!-- Dropdown Menu -->
-							<div
-								class="dropdown-menu absolute top-full right-0 mt-2 w-56 backdrop-blur-md bg-white/90 rounded-lg shadow-xl border border-gray-200/50 overflow-hidden">
-								<a
-									href="excel_1.html"
-									class="flex items-center space-x-3 px-4 py-3 hover:bg-green-50 transition-colors group">
-									<span class="text-2xl">📗</span>
-									<div>
-										<div
-											class="font-semibold text-gray-800 group-hover:text-green-700"
-											>Excel</div
-										>
-										<div class="text-xs text-gray-500"
-											>Fonctions Excel</div
-										>
-									</div>
-								</a>
-								<a
-									href="word_1.html"
-									class="flex items-center space-x-3 px-4 py-3 hover:bg-blue-50 transition-colors group">
-									<span class="text-2xl">📘</span>
-									<div>
-										<div
-											class="font-semibold text-gray-800 group-hover:text-blue-700"
-											>Word</div
-										>
-										<div class="text-xs text-gray-500"
-											>Fonctionnalités Word</div
-										>
-									</div>
-								</a>
-								<a
-									href="powerpoint_1.html"
-									class="flex items-center space-x-3 px-4 py-3 hover:bg-orange-50 transition-colors group">
-									<span class="text-2xl">📙</span>
-									<div>
-										<div
-											class="font-semibold text-gray-800 group-hover:text-orange-700"
-											>PowerPoint
-										</div>
-										<div class="text-xs text-gray-500"
-											>Astuces PowerPoint</div
-										>
-									</div>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</nav>
-
+		<div id="navbar-container"></div>
 		<!-- Main Content -->
 		<main class="container mx-auto px-6 py-12">
 			<!-- Header Section -->
@@ -537,7 +445,14 @@
 				</p>
 			</div>
 		</footer>
-
+		<!-- Script de chargement de la barre de navigation -->
+		<script>
+			fetch("_navbar.html")
+				.then((response) => response.text())
+				.then((data) => {
+					document.getElementById("navbar-container").innerHTML = data;
+				});
+		</script>
 		<!-- Script de récupération des progressions -->
 		<script>
 			window.addEventListener("load", () => {

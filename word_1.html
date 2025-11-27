@@ -52,6 +52,19 @@
 				border-color: #3b82f6;
 				/* blue-500 */
 			}
+			/* Navigation dropdown */
+			.dropdown:hover .dropdown-menu {
+				opacity: 1;
+				visibility: visible;
+				transform: translateY(0);
+			}
+
+			.dropdown-menu {
+				opacity: 0;
+				visibility: hidden;
+				transform: translateY(-10px);
+				transition: all 0.3s ease;
+			}
 		</style>
 		<style>
 			*,
@@ -931,23 +944,9 @@
 		</style>
 	</head>
 
-	<body class="bg-gray-100 text-gray-900 flex flex-col min-h-screen">
+	<body class="bg-gray-100 text-gray-900 flex flex-col min-h-screen pt-20">
 		<!-- Barre de Navigation -->
-		<nav class="bg-white shadow-md sticky top-0 z-20">
-			<div
-				class="container mx-auto px-6 py-4 flex justify-between items-center">
-				<h1 class="text-xl md:text-2xl font-bold text-blue-800"
-					>Guide Word</h1
-				>
-				<div
-					class="text-sm text-gray-600 bg-gray-50 px-3 py-1 rounded-full border border-gray-200">
-					Progression :
-					<span id="progress-count" class="font-bold text-blue-700"
-						>13</span
-					>/20
-				</div>
-			</div>
-		</nav>
+		<div id="navbar-container"></div>
 
 		<!-- Contenu Principal -->
 		<main class="container mx-auto p-6 flex-grow">
@@ -1822,7 +1821,14 @@ Ou: Alt + Clic sur un mot</code></pre>
 				<p>© 2025 Guide Word. Contenu généré à titre informatif.</p>
 			</div>
 		</footer>
-
+		<!-- Script de chargement de la barre de navigation -->
+		<script>
+			fetch("_navbar.html")
+				.then((response) => response.text())
+				.then((data) => {
+					document.getElementById("navbar-container").innerHTML = data;
+				});
+		</script>
 		<!-- Script de gestion du LocalStorage et des interactions -->
 		<script>
 			document.addEventListener("DOMContentLoaded", () => {
