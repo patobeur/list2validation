@@ -52,31 +52,30 @@
 				border-color: #f97316;
 				/* orange-500 */
 			}
+			/* Navigation dropdown */
+			.dropdown:hover .dropdown-menu {
+				opacity: 1;
+				visibility: visible;
+				transform: translateY(0);
+			}
+
+			.dropdown-menu {
+				opacity: 0;
+				visibility: hidden;
+				transform: translateY(-10px);
+				transition: all 0.3s ease;
+			}
 		</style>
 	</head>
 
-	<body class="bg-gray-100 text-gray-900 flex flex-col min-h-screen">
+	<body class="bg-gray-100 text-gray-900 flex flex-col min-h-screen pt-20">
 		<!-- Barre de Navigation -->
-		<nav class="bg-white shadow-md sticky top-0 z-20">
-			<div
-				class="container mx-auto px-6 py-4 flex justify-between items-center">
-				<h1 class="text-xl md:text-2xl font-bold text-orange-800"
-					>Guide PowerPoint</h1
-				>
-				<div
-					class="text-sm text-gray-600 bg-gray-50 px-3 py-1 rounded-full border border-gray-200">
-					Progression :
-					<span id="progress-count" class="font-bold text-orange-700"
-						>0</span
-					>/20
-				</div>
-			</div>
-		</nav>
+		<div id="navbar-container"></div>
 
 		<!-- Contenu Principal -->
 		<main class="container mx-auto p-6 flex-grow">
 			<h2 class="text-3xl font-bold text-center mb-10 text-gray-800"
-				>Top 20 des Fonctionnalités et Astuces PowerPoint
+				>Top 20 des Fonctionnalités et Astuces PowerPoint <span class="text-xl font-medium text-gray-500">(<span id="progress-count">0</span>/20)</span>
 			</h2>
 
 			<!-- Grille des fonctionnalités -->
@@ -816,20 +815,18 @@ Choisissez un type : Processus, Hiérarchie, etc.</code></pre>
 				<p>© 2025 Guide PowerPoint. Contenu généré à titre informatif.</p>
 			</div>
 		</footer>
-
-		<!-- Script de gestion du LocalStorage et des interactions -->
+		<!-- Scripts -->
 		<script>
-			document.addEventListener("DOMContentLoaded", () => {
-				const checkboxes = document.querySelectorAll(".mastery-checkbox");
-				const progressCount = document.getElementById("progress-count");
-				const summaryGrid = document.getElementById("summary-grid");
-				const userNameInput = document.getElementById("user-name");
+			fetch("_navbar.html")
+				.then((response) => response.text())
+				.then((data) => {
+					document.getElementById("navbar-container").innerHTML = data;
+				});
 
-				const STORAGE_KEY = "powerpointMasteryProgress";
-				const NAME_KEY = "powerpointMasteryName";
-
-				// Liste des fonctionnalités pour le résumé (Doit correspondre aux data-id)
-				const functionsList = [
+			const pageConfig = {
+				storageKey: "powerpointMasteryProgress",
+				nameKey: "powerpointMasteryName",
+				functionsList: [
 					{ id: "morph", name: "1. Morphose" },
 					{ id: "designer", name: "2. Designer" },
 					{ id: "newslide", name: "3. Nouvelle Diapo" },
@@ -850,112 +847,9 @@ Choisissez un type : Processus, Hiérarchie, etc.</code></pre>
 					{ id: "zoom", name: "18. Zoom" },
 					{ id: "collab", name: "19. Collaboration" },
 					{ id: "smartart", name: "20. SmartArt" },
-				];
-
-				// Initialiser la grille de résumé
-				const initSummary = () => {
-					summaryGrid.innerHTML = "";
-					functionsList.forEach((func) => {
-						const div = document.createElement("div");
-						div.id = `summary-${func.id}`;
-						div.className =
-							"flex items-center justify-between p-2 rounded border border-gray-200 text-xs font-medium text-gray-500 transition-colors";
-						div.innerHTML = `
-                        <span>${func.name}</span>
-                        <span class="status-icon">○</span>
-                    `;
-						summaryGrid.appendChild(div);
-					});
-				};
-
-				// Mettre à jour un élément du résumé
-				const updateSummaryItem = (id, isAcquired) => {
-					const item = document.getElementById(`summary-${id}`);
-					if (item) {
-						if (isAcquired) {
-							item.classList.add("summary-item-acquired");
-							item.classList.remove("bg-white", "text-gray-500");
-							item.querySelector(".status-icon").innerHTML = "✓";
-						} else {
-							item.classList.remove("summary-item-acquired");
-							item.classList.add("bg-white", "text-gray-500");
-							item.querySelector(".status-icon").innerHTML = "○";
-						}
-					}
-				};
-
-				// Charger l'état
-				const loadState = () => {
-					// Charger le nom
-					const savedName = localStorage.getItem(NAME_KEY);
-					if (savedName) {
-						userNameInput.value = savedName;
-					}
-
-					// Charger les cases à cocher
-					const savedState =
-						JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
-					let count = 0;
-
-					checkboxes.forEach((box) => {
-						const id = box.dataset.id;
-						const isChecked = savedState[id] === true;
-
-						if (isChecked) {
-							box.checked = true;
-							count++;
-						}
-
-						markCardAsAcquired(box);
-						updateSummaryItem(id, isChecked);
-					});
-					updateProgress(count);
-				};
-
-				// Sauvegarder l'état
-				const saveState = () => {
-					const state = {};
-					let count = 0;
-					checkboxes.forEach((box) => {
-						state[box.dataset.id] = box.checked;
-						if (box.checked) count++;
-					});
-					localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-					updateProgress(count);
-				};
-
-				// Fonction visuelle carte
-				const markCardAsAcquired = (checkbox) => {
-					const card = checkbox.closest(".bg-white");
-					if (checkbox.checked) {
-						card.classList.add("card-acquired");
-					} else {
-						card.classList.remove("card-acquired");
-					}
-				};
-
-				const updateProgress = (count) => {
-					progressCount.textContent = count;
-				};
-
-				// Initialisation
-				initSummary();
-				loadState();
-
-				// Listeners pour les checkboxes
-				checkboxes.forEach((box) => {
-					box.addEventListener("change", (e) => {
-						markCardAsAcquired(e.target);
-						updateSummaryItem(e.target.dataset.id, e.target.checked);
-						saveState();
-					});
-				});
-
-				// Listener pour le nom
-				userNameInput.addEventListener("input", (e) => {
-					localStorage.setItem(NAME_KEY, e.target.value);
-				});
-			});
+				]
+			};
 		</script>
+		<script src="progress.js"></script>
 	</body>
 </html>
