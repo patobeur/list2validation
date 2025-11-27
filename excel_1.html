@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Top 20 des Fonctions Excel</title>
+		<!-- Chargement de Tailwind CSS -->
+		<script src="tailwind/3.4.17"></script>
+		<!-- Configuration de la police Système (Locale) -->
+		<script>
+			tailwind.config = {
+				theme: {
+					extend: {
+						fontFamily: {
+							sans: [
+								"system-ui",
+								"-apple-system",
+								"Segoe UI",
+								"Roboto",
+								"Helvetica",
+								"Arial",
+								"sans-serif",
+							],
+						},
+					},
+				},
+			};
+		</script>
+		<style>
+			body {
+				/* Utilisation de la pile de polices système native pour un rendu optimal et rapide */
+				font-family: system-ui, -apple-system, "Segoe UI", Roboto,
+					"Helvetica Neue", "Noto Sans", "Liberation Sans", Arial,
+					sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+					"Segoe UI Symbol", "Noto Color Emoji";
+			}
+			/* Style simple pour la transition de couleur de fond */
+			.card-acquired {
+				background-color: #f0fdf4 !important; /* green-50 */
+				border: 2px solid #22c55e; /* green-500 */
+			}
+			.summary-item-acquired {
+				background-color: #dcfce7; /* green-100 */
+				color: #166534; /* green-800 */
+				border-color: #22c55e; /* green-500 */
+			}
+		</style>
+	</head>
+	<body class="bg-gray-100 text-gray-900 flex flex-col min-h-screen">
+		<!-- Barre de Navigation -->
+		<nav class="bg-white shadow-md sticky top-0 z-20">
+			<div
+				class="container mx-auto px-6 py-4 flex justify-between items-center">
+				<h1 class="text-xl md:text-2xl font-bold text-green-800"
+					>Guide Excel</h1
+				>
+				<div
+					class="text-sm text-gray-600 bg-gray-50 px-3 py-1 rounded-full border border-gray-200">
+					Progression :
+					<span id="progress-count" class="font-bold text-green-700"
+						>0</span
+					>/20
+				</div>
+			</div>
+		</nav>
+
+		<!-- Contenu Principal -->
+		<main class="container mx-auto p-6 flex-grow">
+			<h2 class="text-3xl font-bold text-center mb-10 text-gray-800"
+				>Top 20 des Fonctions Excel</h2
+			>
+
+			<!-- Grille des fonctions -->
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+				<!-- 1. SOMME (SUM) -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-sum">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-green-600 rounded focus:ring-green-500 border-gray-300 cursor-pointer"
+								data-id="sum" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-green-700 mb-2 pr-20"
+						>1. SOMME (SUM)</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Additionne tous les nombres dans une plage de cellules.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Syntaxe :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=SOMME(nombre1; [nombre2]; ...)</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Exemple :</p>
+					<p class="text-gray-700 mb-1"
+						>Pour additionner les valeurs des cellules A1 à A10 :</p
+					>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=SOMME(A1:A10)</code></pre>
+				</div>
+
+				<!-- 2. MOYENNE (AVERAGE) -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-average">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-green-600 rounded focus:ring-green-500 border-gray-300 cursor-pointer"
+								data-id="average" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-green-700 mb-2 pr-20"
+						>2. MOYENNE (AVERAGE)</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Calcule la moyenne arithmétique d'une plage de cellules.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Syntaxe :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=MOYENNE(nombre1; [nombre2]; ...)</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Exemple :</p>
+					<p class="text-gray-700 mb-1"
+						>Pour la moyenne des notes en A1:A10 :</p
+					>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=MOYENNE(A1:A10)</code></pre>
+				</div>
+
+				<!-- 3. SI (IF) -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-if">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-green-600 rounded focus:ring-green-500 border-gray-300 cursor-pointer"
+								data-id="if" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-green-700 mb-2 pr-20"
+						>3. SI (IF)</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Effectue un test logique et renvoie une valeur si VRAI, et
+						une autre si FAUX.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Syntaxe :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=SI(test_logique; valeur_si_vrai; valeur_si_faux)</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Exemple :</p>
+					<p class="text-gray-700 mb-1"
+						>Si la note en A1 est > 10, affiche "Réussi", sinon "Échec"
+						:</p
+					>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=SI(A1>10; "Réussi"; "Échec")</code></pre>
+				</div>
+
+				<!-- 4. RECHERCHEV (VLOOKUP) -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-vlookup">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-green-600 rounded focus:ring-green-500 border-gray-300 cursor-pointer"
+								data-id="vlookup" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-green-700 mb-2 pr-20"
+						>4. RECHERCHEV (VLOOKUP)</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Recherche une valeur dans la première colonne d'un tableau et
+						renvoie une valeur dans la même ligne d'une colonne
+						spécifiée.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Syntaxe :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=RECHERCHEV(valeur_cherchée; table_matrice; no_index_col; [valeur_proche])</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Exemple :</p>
+					<p class="text-gray-700 mb-1"
+						>Cherche A1 dans la plage C1:D10, et renvoie la 2ème colonne
+						(correspondance exacte) :</p
+					>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=RECHERCHEV(A1; C1:D10; 2; FAUX)</code></pre>
+				</div>
+
+				<!-- 5. NB.SI (COUNTIF) -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-countif">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-green-600 rounded focus:ring-green-500 border-gray-300 cursor-pointer"
+								data-id="countif" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-green-700 mb-2 pr-20"
+						>5. NB.SI (COUNTIF)</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Compte le nombre de cellules dans une plage qui répondent à
+						un critère.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Syntaxe :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=NB.SI(plage; critère)</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Exemple :</p>
+					<p class="text-gray-700 mb-1"
+						>Compte le nombre de fois que "Oui" apparaît dans la plage
+						A1:A10 :</p
+					>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=NB.SI(A1:A10; "Oui")</code></pre>
+				</div>
+
+				<!-- 6. SOMME.SI (SUMIF) -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-sumif">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-green-600 rounded focus:ring-green-500 border-gray-300 cursor-pointer"
+								data-id="sumif" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-green-700 mb-2 pr-20"
+						>6. SOMME.SI (SUMIF)</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Additionne les cellules d'une plage qui répondent à un
+						critère.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Syntaxe :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=SOMME.SI(plage; critère; [somme_plage])</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Exemple :</p>
+					<p class="text-gray-700 mb-1"
+						>Additionne les montants en B1:B10 si la catégorie en A1:A10
+						est "Fruits" :</p
+					>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=SOMME.SI(A1:A10; "Fruits"; B1:B10)</code></pre>
+				</div>
+
+				<!-- 7. RECHERCHEX (XLOOKUP) -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-xlookup">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-green-600 rounded focus:ring-green-500 border-gray-300 cursor-pointer"
+								data-id="xlookup" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-green-700 mb-2 pr-20"
+						>7. RECHERCHEX (XLOOKUP)</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Moderne et remplace RECHERCHEV. Recherche une valeur et
+						renvoie un résultat de n'importe quelle colonne.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Syntaxe :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=RECHERCHEX(valeur_cherchée; tableau_recherche; tableau_renvoyé; ...)</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Exemple :</p>
+					<p class="text-gray-700 mb-1"
+						>Cherche A1 dans la colonne C et renvoie la valeur de la
+						colonne D :</p
+					>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=RECHERCHEX(A1; C:C; D:D)</code></pre>
+				</div>
+
+				<!-- 8. MAX -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-max">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-green-600 rounded focus:ring-green-500 border-gray-300 cursor-pointer"
+								data-id="max" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-green-700 mb-2 pr-20"
+						>8. MAX</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Renvoie la plus grande valeur d'une plage de cellules.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Syntaxe :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=MAX(nombre1; [nombre2]; ...)</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Exemple :</p>
+					<p class="text-gray-700 mb-1"
+						>Trouve le montant le plus élevé en A1:A10 :</p
+					>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=MAX(A1:A10)</code></pre>
+				</div>
+
+				<!-- 9. MIN -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-min">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-green-600 rounded focus:ring-green-500 border-gray-300 cursor-pointer"
+								data-id="min" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-green-700 mb-2 pr-20"
+						>9. MIN</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Renvoie la plus petite valeur d'une plage de cellules.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Syntaxe :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=MIN(nombre1; [nombre2]; ...)</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Exemple :</p>
+					<p class="text-gray-700 mb-1"
+						>Trouve le montant le plus bas en A1:A10 :</p
+					>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=MIN(A1:A10)</code></pre>
+				</div>
+
+				<!-- 10. NB (COUNT) -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-count">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-green-600 rounded focus:ring-green-500 border-gray-300 cursor-pointer"
+								data-id="count" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-green-700 mb-2 pr-20"
+						>10. NB (COUNT)</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Compte le nombre de cellules qui contiennent des nombres.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Syntaxe :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=NB(valeur1; [valeur2]; ...)</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Exemple :</p>
+					<p class="text-gray-700 mb-1"
+						>Compte combien de cellules en A1:A10 contiennent des chiffres
+						:</p
+					>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=NB(A1:A10)</code></pre>
+				</div>
+
+				<!-- 11. NBVAL (COUNTA) -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-counta">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-green-600 rounded focus:ring-green-500 border-gray-300 cursor-pointer"
+								data-id="counta" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-green-700 mb-2 pr-20"
+						>11. NBVAL (COUNTA)</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Compte le nombre de cellules qui ne sont pas vides
+						(contiennent du texte, des nombres, etc.).</p
+					>
+					<p class="text-sm font-medium text-gray-600">Syntaxe :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=NBVAL(valeur1; [valeur2]; ...)</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Exemple :</p>
+					<p class="text-gray-700 mb-1"
+						>Compte le nombre de cellules non vides en A1:A10 :</p
+					>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=NBVAL(A1:A10)</code></pre>
+				</div>
+
+				<!-- 12. ET (AND) -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-and">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-green-600 rounded focus:ring-green-500 border-gray-300 cursor-pointer"
+								data-id="and" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-green-700 mb-2 pr-20"
+						>12. ET (AND)</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Vérifie si TOUTES les conditions sont VRAIES. Renvoie VRAI ou
+						FAUX.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Syntaxe :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=ET(logique1; [logique2]; ...)</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Exemple :</p>
+					<p class="text-gray-700 mb-1"
+						>Souvent utilisé avec SI. Vérifie si A1 > 10 ET B1 = "Oui"
+						:</p
+					>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=SI(ET(A1>10; B1="Oui"); "VRAI"; "FAUX")</code></pre>
+				</div>
+
+				<!-- 13. OU (OR) -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-or">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-green-600 rounded focus:ring-green-500 border-gray-300 cursor-pointer"
+								data-id="or" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-green-700 mb-2 pr-20"
+						>13. OU (OR)</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Vérifie si AU MOINS UNE condition est VRAIE. Renvoie VRAI ou
+						FAUX.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Syntaxe :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=OU(logique1; [logique2]; ...)</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Exemple :</p>
+					<p class="text-gray-700 mb-1"
+						>Vérifie si A1 > 10 OU B1 = "Oui" :</p
+					>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=SI(OU(A1>10; B1="Oui"); "VRAI"; "FAUX")</code></pre>
+				</div>
+
+				<!-- 14. CONCAT -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-concat">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-green-600 rounded focus:ring-green-500 border-gray-300 cursor-pointer"
+								data-id="concat" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-green-700 mb-2 pr-20"
+						>14. CONCAT</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Combine le texte de plusieurs cellules en un seul. (Remplace
+						CONCATENER).</p
+					>
+					<p class="text-sm font-medium text-gray-600">Syntaxe :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=CONCAT(texte1; [texte2]; ...)</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Exemple :</p>
+					<p class="text-gray-700 mb-1"
+						>Combine le prénom en A1 et le nom en B1, séparés par un
+						espace :</p
+					>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=CONCAT(A1; " "; B1)</code></pre>
+				</div>
+
+				<!-- 15. GAUCHE (LEFT) -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-left">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-green-600 rounded focus:ring-green-500 border-gray-300 cursor-pointer"
+								data-id="left" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-green-700 mb-2 pr-20"
+						>15. GAUCHE (LEFT)</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Extrait un nombre de caractères en partant de la gauche d'un
+						texte.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Syntaxe :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=GAUCHE(texte; [no_car])</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Exemple :</p>
+					<p class="text-gray-700 mb-1"
+						>Extrait les 3 premiers caractères du texte en A1 :</p
+					>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=GAUCHE(A1; 3)</code></pre>
+				</div>
+
+				<!-- 16. DROITE (RIGHT) -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-right">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-green-600 rounded focus:ring-green-500 border-gray-300 cursor-pointer"
+								data-id="right" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-green-700 mb-2 pr-20"
+						>16. DROITE (RIGHT)</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Extrait un nombre de caractères en partant de la droite d'un
+						texte.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Syntaxe :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=DROITE(texte; [no_car])</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Exemple :</p>
+					<p class="text-gray-700 mb-1"
+						>Extrait les 2 derniers caractères du texte en A1 :</p
+					>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=DROITE(A1; 2)</code></pre>
+				</div>
+
+				<!-- 17. STXT (MID) -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-mid">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-green-600 rounded focus:ring-green-500 border-gray-300 cursor-pointer"
+								data-id="mid" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-green-700 mb-2 pr-20"
+						>17. STXT (MID)</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Extrait un nombre de caractères d'un texte à partir d'une
+						position spécifiée.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Syntaxe :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=STXT(texte; no_départ; no_car)</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Exemple :</p>
+					<p class="text-gray-700 mb-1"
+						>Extrait 4 caractères du texte en A1, en commençant au 3ème
+						caractère :</p
+					>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=STXT(A1; 3; 4)</code></pre>
+				</div>
+
+				<!-- 18. AUJOURDHUI (TODAY) -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-today">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-green-600 rounded focus:ring-green-500 border-gray-300 cursor-pointer"
+								data-id="today" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-green-700 mb-2 pr-20"
+						>18. AUJOURDHUI (TODAY)</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Renvoie la date du jour actuelle. Se met à jour à l'ouverture
+						du fichier.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Syntaxe :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=AUJOURDHUI()</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Exemple :</p>
+					<p class="text-gray-700 mb-1"
+						>Affiche la date actuelle dans la cellule :</p
+					>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=AUJOURDHUI()</code></pre>
+				</div>
+
+				<!-- 19. SIERREUR (IFERROR) -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-iferror">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-green-600 rounded focus:ring-green-500 border-gray-300 cursor-pointer"
+								data-id="iferror" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-green-700 mb-2 pr-20"
+						>19. SIERREUR (IFERROR)</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Renvoie une valeur spécifiée si une formule génère une erreur
+						(ex: #DIV/0!).</p
+					>
+					<p class="text-sm font-medium text-gray-600">Syntaxe :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=SIERREUR(valeur; valeur_si_erreur)</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Exemple :</p>
+					<p class="text-gray-700 mb-1"
+						>Si A1/B1 est une erreur, affiche "0", sinon affiche le
+						résultat :</p
+					>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=SIERREUR(A1/B1; 0)</code></pre>
+				</div>
+
+				<!-- 20. INDEX & EQUIV (INDEX & MATCH) -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-indexmatch">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-green-600 rounded focus:ring-green-500 border-gray-300 cursor-pointer"
+								data-id="indexmatch" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-green-700 mb-2 pr-20"
+						>20. INDEX + EQUIV</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Une combinaison puissante. EQUIV trouve la position d'une
+						valeur, et INDEX la récupère dans une autre colonne.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Syntaxe :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=INDEX(plage_résultat; EQUIV(valeur_cherchée; plage_recherche; 0))</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Exemple :</p>
+					<p class="text-gray-700 mb-1"
+						>Cherche A1 dans la colonne C et renvoie la valeur de la
+						colonne D (comme RECHERCHEX) :</p
+					>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>=INDEX(D:D; EQUIV(A1; C:C; 0))</code></pre>
+				</div>
+			</div>
+
+			<!-- Section Récapitulatif Compact -->
+			<section
+				id="summary-section"
+				class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+				<h3
+					class="text-lg font-bold text-gray-800 mb-4 flex items-center flex-wrap">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="h-5 w-5 mr-2 text-green-600"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor">
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+					</svg>
+					Récapitulatif de
+					<input
+						type="text"
+						id="user-name"
+						placeholder="[Votre Prénom]"
+						class="ml-2 bg-transparent border-none focus:ring-0 p-0 text-lg font-bold text-gray-800 placeholder-gray-400 w-64 outline-none" />
+				</h3>
+				<div
+					class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3"
+					id="summary-grid">
+					<!-- Généré via JS -->
+				</div>
+			</section>
+		</main>
+
+		<!-- Footer -->
+		<footer class="bg-gray-800 text-white p-6 mt-12">
+			<div class="container mx-auto text-center text-sm">
+				<p>&copy; 2025 Guide Excel. Contenu généré à titre informatif.</p>
+			</div>
+		</footer>
+
+		<!-- Script de gestion du LocalStorage et des interactions -->
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				const checkboxes = document.querySelectorAll(".mastery-checkbox");
+				const progressCount = document.getElementById("progress-count");
+				const summaryGrid = document.getElementById("summary-grid");
+				const userNameInput = document.getElementById("user-name");
+
+				const STORAGE_KEY = "excelMasteryProgress";
+				const NAME_KEY = "excelMasteryName";
+
+				// Liste des fonctions pour le résumé (Doit correspondre aux data-id)
+				const functionsList = [
+					{ id: "sum", name: "1. SOMME" },
+					{ id: "average", name: "2. MOYENNE" },
+					{ id: "if", name: "3. SI" },
+					{ id: "vlookup", name: "4. RECHERCHEV" },
+					{ id: "countif", name: "5. NB.SI" },
+					{ id: "sumif", name: "6. SOMME.SI" },
+					{ id: "xlookup", name: "7. RECHERCHEX" },
+					{ id: "max", name: "8. MAX" },
+					{ id: "min", name: "9. MIN" },
+					{ id: "count", name: "10. NB" },
+					{ id: "counta", name: "11. NBVAL" },
+					{ id: "and", name: "12. ET" },
+					{ id: "or", name: "13. OU" },
+					{ id: "concat", name: "14. CONCAT" },
+					{ id: "left", name: "15. GAUCHE" },
+					{ id: "right", name: "16. DROITE" },
+					{ id: "mid", name: "17. STXT" },
+					{ id: "today", name: "18. AUJOURDHUI" },
+					{ id: "iferror", name: "19. SIERREUR" },
+					{ id: "indexmatch", name: "20. INDEX+EQUIV" },
+				];
+
+				// Initialiser la grille de résumé
+				const initSummary = () => {
+					summaryGrid.innerHTML = "";
+					functionsList.forEach((func) => {
+						const div = document.createElement("div");
+						div.id = `summary-${func.id}`;
+						div.className =
+							"flex items-center justify-between p-2 rounded border border-gray-200 text-xs font-medium text-gray-500 transition-colors";
+						div.innerHTML = `
+                        <span>${func.name}</span>
+                        <span class="status-icon">○</span>
+                    `;
+						summaryGrid.appendChild(div);
+					});
+				};
+
+				// Mettre à jour un élément du résumé
+				const updateSummaryItem = (id, isAcquired) => {
+					const item = document.getElementById(`summary-${id}`);
+					if (item) {
+						if (isAcquired) {
+							item.classList.add("summary-item-acquired");
+							item.classList.remove("bg-white", "text-gray-500");
+							item.querySelector(".status-icon").innerHTML = "✓";
+						} else {
+							item.classList.remove("summary-item-acquired");
+							item.classList.add("bg-white", "text-gray-500");
+							item.querySelector(".status-icon").innerHTML = "○";
+						}
+					}
+				};
+
+				// Charger l'état
+				const loadState = () => {
+					// Charger le nom
+					const savedName = localStorage.getItem(NAME_KEY);
+					if (savedName) {
+						userNameInput.value = savedName;
+					}
+
+					// Charger les cases à cocher
+					const savedState =
+						JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+					let count = 0;
+
+					checkboxes.forEach((box) => {
+						const id = box.dataset.id;
+						const isChecked = savedState[id] === true;
+
+						if (isChecked) {
+							box.checked = true;
+							count++;
+						}
+
+						markCardAsAcquired(box);
+						updateSummaryItem(id, isChecked);
+					});
+					updateProgress(count);
+				};
+
+				// Sauvegarder l'état
+				const saveState = () => {
+					const state = {};
+					let count = 0;
+					checkboxes.forEach((box) => {
+						state[box.dataset.id] = box.checked;
+						if (box.checked) count++;
+					});
+					localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+					updateProgress(count);
+				};
+
+				// Fonction visuelle carte
+				const markCardAsAcquired = (checkbox) => {
+					const card = checkbox.closest(".bg-white");
+					if (checkbox.checked) {
+						card.classList.add("card-acquired");
+					} else {
+						card.classList.remove("card-acquired");
+					}
+				};
+
+				const updateProgress = (count) => {
+					progressCount.textContent = count;
+				};
+
+				// Initialisation
+				initSummary();
+				loadState();
+
+				// Listeners pour les checkboxes
+				checkboxes.forEach((box) => {
+					box.addEventListener("change", (e) => {
+						markCardAsAcquired(e.target);
+						updateSummaryItem(e.target.dataset.id, e.target.checked);
+						saveState();
+					});
+				});
+
+				// Listener pour le nom
+				userNameInput.addEventListener("input", (e) => {
+					localStorage.setItem(NAME_KEY, e.target.value);
+				});
+			});
+		</script>
+	</body>
+</html>

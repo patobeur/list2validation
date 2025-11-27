@@ -1,0 +1,1967 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Top 20 des Fonctionnalités Word</title>
+		<!-- Chargement de Tailwind CSS -->
+		<script src="tailwind/3.4.17"></script>
+		<!-- Configuration de la police Système (Locale) -->
+		<script>
+			tailwind.config = {
+				theme: {
+					extend: {
+						fontFamily: {
+							sans: [
+								"system-ui",
+								"-apple-system",
+								"Segoe UI",
+								"Roboto",
+								"Helvetica",
+								"Arial",
+								"sans-serif",
+							],
+						},
+					},
+				},
+			};
+		</script>
+		<style>
+			body {
+				/* Utilisation de la pile de polices système native pour un rendu optimal et rapide */
+				font-family: system-ui, -apple-system, "Segoe UI", Roboto,
+					"Helvetica Neue", "Noto Sans", "Liberation Sans", Arial,
+					sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+					"Segoe UI Symbol", "Noto Color Emoji";
+			}
+
+			/* Style simple pour la transition de couleur de fond */
+			.card-acquired {
+				background-color: #eff6ff !important;
+				/* blue-50 */
+				border: 2px solid #3b82f6;
+				/* blue-500 */
+			}
+
+			.summary-item-acquired {
+				background-color: #dbeafe;
+				/* blue-100 */
+				color: #1e3a8a;
+				/* blue-900 */
+				border-color: #3b82f6;
+				/* blue-500 */
+			}
+		</style>
+		<style>
+			*,
+			::before,
+			::after {
+				--tw-border-spacing-x: 0;
+				--tw-border-spacing-y: 0;
+				--tw-translate-x: 0;
+				--tw-translate-y: 0;
+				--tw-rotate: 0;
+				--tw-skew-x: 0;
+				--tw-skew-y: 0;
+				--tw-scale-x: 1;
+				--tw-scale-y: 1;
+				--tw-pan-x: ;
+				--tw-pan-y: ;
+				--tw-pinch-zoom: ;
+				--tw-scroll-snap-strictness: proximity;
+				--tw-gradient-from-position: ;
+				--tw-gradient-via-position: ;
+				--tw-gradient-to-position: ;
+				--tw-ordinal: ;
+				--tw-slashed-zero: ;
+				--tw-numeric-figure: ;
+				--tw-numeric-spacing: ;
+				--tw-numeric-fraction: ;
+				--tw-ring-inset: ;
+				--tw-ring-offset-width: 0px;
+				--tw-ring-offset-color: #fff;
+				--tw-ring-color: rgb(59 130 246 / 0.5);
+				--tw-ring-offset-shadow: 0 0 #0000;
+				--tw-ring-shadow: 0 0 #0000;
+				--tw-shadow: 0 0 #0000;
+				--tw-shadow-colored: 0 0 #0000;
+				--tw-blur: ;
+				--tw-brightness: ;
+				--tw-contrast: ;
+				--tw-grayscale: ;
+				--tw-hue-rotate: ;
+				--tw-invert: ;
+				--tw-saturate: ;
+				--tw-sepia: ;
+				--tw-drop-shadow: ;
+				--tw-backdrop-blur: ;
+				--tw-backdrop-brightness: ;
+				--tw-backdrop-contrast: ;
+				--tw-backdrop-grayscale: ;
+				--tw-backdrop-hue-rotate: ;
+				--tw-backdrop-invert: ;
+				--tw-backdrop-opacity: ;
+				--tw-backdrop-saturate: ;
+				--tw-backdrop-sepia: ;
+				--tw-contain-size: ;
+				--tw-contain-layout: ;
+				--tw-contain-paint: ;
+				--tw-contain-style: ;
+			}
+
+			::backdrop {
+				--tw-border-spacing-x: 0;
+				--tw-border-spacing-y: 0;
+				--tw-translate-x: 0;
+				--tw-translate-y: 0;
+				--tw-rotate: 0;
+				--tw-skew-x: 0;
+				--tw-skew-y: 0;
+				--tw-scale-x: 1;
+				--tw-scale-y: 1;
+				--tw-pan-x: ;
+				--tw-pan-y: ;
+				--tw-pinch-zoom: ;
+				--tw-scroll-snap-strictness: proximity;
+				--tw-gradient-from-position: ;
+				--tw-gradient-via-position: ;
+				--tw-gradient-to-position: ;
+				--tw-ordinal: ;
+				--tw-slashed-zero: ;
+				--tw-numeric-figure: ;
+				--tw-numeric-spacing: ;
+				--tw-numeric-fraction: ;
+				--tw-ring-inset: ;
+				--tw-ring-offset-width: 0px;
+				--tw-ring-offset-color: #fff;
+				--tw-ring-color: rgb(59 130 246 / 0.5);
+				--tw-ring-offset-shadow: 0 0 #0000;
+				--tw-ring-shadow: 0 0 #0000;
+				--tw-shadow: 0 0 #0000;
+				--tw-shadow-colored: 0 0 #0000;
+				--tw-blur: ;
+				--tw-brightness: ;
+				--tw-contrast: ;
+				--tw-grayscale: ;
+				--tw-hue-rotate: ;
+				--tw-invert: ;
+				--tw-saturate: ;
+				--tw-sepia: ;
+				--tw-drop-shadow: ;
+				--tw-backdrop-blur: ;
+				--tw-backdrop-brightness: ;
+				--tw-backdrop-contrast: ;
+				--tw-backdrop-grayscale: ;
+				--tw-backdrop-hue-rotate: ;
+				--tw-backdrop-invert: ;
+				--tw-backdrop-opacity: ;
+				--tw-backdrop-saturate: ;
+				--tw-backdrop-sepia: ;
+				--tw-contain-size: ;
+				--tw-contain-layout: ;
+				--tw-contain-paint: ;
+				--tw-contain-style: ;
+			}
+
+			/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */
+			*,
+			::after,
+			::before {
+				box-sizing: border-box;
+				border-width: 0;
+				border-style: solid;
+				border-color: #e5e7eb;
+			}
+
+			::after,
+			::before {
+				--tw-content: "";
+			}
+
+			:host,
+			html {
+				line-height: 1.5;
+				-webkit-text-size-adjust: 100%;
+				-moz-tab-size: 4;
+				tab-size: 4;
+				font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+					Arial, sans-serif;
+				font-feature-settings: normal;
+				font-variation-settings: normal;
+				-webkit-tap-highlight-color: transparent;
+			}
+
+			body {
+				margin: 0;
+				line-height: inherit;
+			}
+
+			hr {
+				height: 0;
+				color: inherit;
+				border-top-width: 1px;
+			}
+
+			abbr:where([title]) {
+				-webkit-text-decoration: underline dotted;
+				text-decoration: underline dotted;
+			}
+
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				font-size: inherit;
+				font-weight: inherit;
+			}
+
+			a {
+				color: inherit;
+				text-decoration: inherit;
+			}
+
+			b,
+			strong {
+				font-weight: bolder;
+			}
+
+			code,
+			kbd,
+			pre,
+			samp {
+				font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+					"Liberation Mono", "Courier New", monospace;
+				font-feature-settings: normal;
+				font-variation-settings: normal;
+				font-size: 1em;
+			}
+
+			small {
+				font-size: 80%;
+			}
+
+			sub,
+			sup {
+				font-size: 75%;
+				line-height: 0;
+				position: relative;
+				vertical-align: baseline;
+			}
+
+			sub {
+				bottom: -0.25em;
+			}
+
+			sup {
+				top: -0.5em;
+			}
+
+			table {
+				text-indent: 0;
+				border-color: inherit;
+				border-collapse: collapse;
+			}
+
+			button,
+			input,
+			optgroup,
+			select,
+			textarea {
+				font-family: inherit;
+				font-feature-settings: inherit;
+				font-variation-settings: inherit;
+				font-size: 100%;
+				font-weight: inherit;
+				line-height: inherit;
+				letter-spacing: inherit;
+				color: inherit;
+				margin: 0;
+				padding: 0;
+			}
+
+			button,
+			select {
+				text-transform: none;
+			}
+
+			button,
+			input:where([type="button"]),
+			input:where([type="reset"]),
+			input:where([type="submit"]) {
+				-webkit-appearance: button;
+				background-color: transparent;
+				background-image: none;
+			}
+
+			:-moz-focusring {
+				outline: auto;
+			}
+
+			:-moz-ui-invalid {
+				box-shadow: none;
+			}
+
+			progress {
+				vertical-align: baseline;
+			}
+
+			::-webkit-inner-spin-button,
+			::-webkit-outer-spin-button {
+				height: auto;
+			}
+
+			[type="search"] {
+				-webkit-appearance: textfield;
+				outline-offset: -2px;
+			}
+
+			::-webkit-search-decoration {
+				-webkit-appearance: none;
+			}
+
+			::-webkit-file-upload-button {
+				-webkit-appearance: button;
+				font: inherit;
+			}
+
+			summary {
+				display: list-item;
+			}
+
+			blockquote,
+			dd,
+			dl,
+			figure,
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6,
+			hr,
+			p,
+			pre {
+				margin: 0;
+			}
+
+			fieldset {
+				margin: 0;
+				padding: 0;
+			}
+
+			legend {
+				padding: 0;
+			}
+
+			menu,
+			ol,
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			dialog {
+				padding: 0;
+			}
+
+			textarea {
+				resize: vertical;
+			}
+
+			input::placeholder,
+			textarea::placeholder {
+				opacity: 1;
+				color: #9ca3af;
+			}
+
+			[role="button"],
+			button {
+				cursor: pointer;
+			}
+
+			:disabled {
+				cursor: default;
+			}
+
+			audio,
+			canvas,
+			embed,
+			iframe,
+			img,
+			object,
+			svg,
+			video {
+				display: block;
+				vertical-align: middle;
+			}
+
+			img,
+			video {
+				max-width: 100%;
+				height: auto;
+			}
+
+			[hidden]:where(:not([hidden="until-found"])) {
+				display: none;
+			}
+
+			.container {
+				width: 100%;
+			}
+
+			@media (min-width: 640px) {
+				.container {
+					max-width: 640px;
+				}
+			}
+
+			@media (min-width: 768px) {
+				.container {
+					max-width: 768px;
+				}
+			}
+
+			@media (min-width: 1024px) {
+				.container {
+					max-width: 1024px;
+				}
+			}
+
+			@media (min-width: 1280px) {
+				.container {
+					max-width: 1280px;
+				}
+			}
+
+			@media (min-width: 1536px) {
+				.container {
+					max-width: 1536px;
+				}
+			}
+
+			.absolute {
+				position: absolute;
+			}
+
+			.relative {
+				position: relative;
+			}
+
+			.sticky {
+				position: sticky;
+			}
+
+			.right-5 {
+				right: 1.25rem;
+			}
+
+			.top-0 {
+				top: 0px;
+			}
+
+			.top-5 {
+				top: 1.25rem;
+			}
+
+			.z-10 {
+				z-index: 10;
+			}
+
+			.z-20 {
+				z-index: 20;
+			}
+
+			.mx-auto {
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			.mb-1 {
+				margin-bottom: 0.25rem;
+			}
+
+			.mb-10 {
+				margin-bottom: 2.5rem;
+			}
+
+			.mb-12 {
+				margin-bottom: 3rem;
+			}
+
+			.mb-2 {
+				margin-bottom: 0.5rem;
+			}
+
+			.mb-3 {
+				margin-bottom: 0.75rem;
+			}
+
+			.mb-4 {
+				margin-bottom: 1rem;
+			}
+
+			.ml-2 {
+				margin-left: 0.5rem;
+			}
+
+			.mr-2 {
+				margin-right: 0.5rem;
+			}
+
+			.mt-12 {
+				margin-top: 3rem;
+			}
+
+			.mt-3 {
+				margin-top: 0.75rem;
+			}
+
+			.flex {
+				display: flex;
+			}
+
+			.grid {
+				display: grid;
+			}
+
+			.h-5 {
+				height: 1.25rem;
+			}
+
+			.min-h-screen {
+				min-height: 100vh;
+			}
+
+			.w-5 {
+				width: 1.25rem;
+			}
+
+			.w-64 {
+				width: 16rem;
+			}
+
+			.flex-grow {
+				flex-grow: 1;
+			}
+
+			.cursor-pointer {
+				cursor: pointer;
+			}
+
+			.select-none {
+				-webkit-user-select: none;
+				user-select: none;
+			}
+
+			.grid-cols-1 {
+				grid-template-columns: repeat(1, minmax(0, 1fr));
+			}
+
+			.grid-cols-2 {
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+			}
+
+			.flex-col {
+				flex-direction: column;
+			}
+
+			.flex-wrap {
+				flex-wrap: wrap;
+			}
+
+			.items-center {
+				align-items: center;
+			}
+
+			.justify-between {
+				justify-content: space-between;
+			}
+
+			.gap-3 {
+				gap: 0.75rem;
+			}
+
+			.gap-8 {
+				gap: 2rem;
+			}
+
+			.space-x-2 > :not([hidden]) ~ :not([hidden]) {
+				--tw-space-x-reverse: 0;
+				margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+				margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+			}
+
+			.overflow-x-auto {
+				overflow-x: auto;
+			}
+
+			.whitespace-pre-wrap {
+				white-space: pre-wrap;
+			}
+
+			.break-words {
+				overflow-wrap: break-word;
+			}
+
+			.rounded {
+				border-radius: 0.25rem;
+			}
+
+			.rounded-full {
+				border-radius: 9999px;
+			}
+
+			.rounded-xl {
+				border-radius: 0.75rem;
+			}
+
+			.border {
+				border-width: 1px;
+			}
+
+			.border-none {
+				border-style: none;
+			}
+
+			.border-gray-200 {
+				--tw-border-opacity: 1;
+				border-color: rgb(229 231 235 / var(--tw-border-opacity, 1));
+			}
+
+			.border-gray-300 {
+				--tw-border-opacity: 1;
+				border-color: rgb(209 213 219 / var(--tw-border-opacity, 1));
+			}
+
+			.bg-gray-100 {
+				--tw-bg-opacity: 1;
+				background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
+			}
+
+			.bg-gray-50 {
+				--tw-bg-opacity: 1;
+				background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
+			}
+
+			.bg-gray-800 {
+				--tw-bg-opacity: 1;
+				background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
+			}
+
+			.bg-transparent {
+				background-color: transparent;
+			}
+
+			.bg-white {
+				--tw-bg-opacity: 1;
+				background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+			}
+
+			.bg-white\/80 {
+				background-color: rgb(255 255 255 / 0.8);
+			}
+
+			.p-0 {
+				padding: 0px;
+			}
+
+			.p-1 {
+				padding: 0.25rem;
+			}
+
+			.p-3 {
+				padding: 0.75rem;
+			}
+
+			.p-6 {
+				padding: 1.5rem;
+			}
+
+			.p-2 {
+				padding: 0.5rem;
+			}
+
+			.px-3 {
+				padding-left: 0.75rem;
+				padding-right: 0.75rem;
+			}
+
+			.px-6 {
+				padding-left: 1.5rem;
+				padding-right: 1.5rem;
+			}
+
+			.py-1 {
+				padding-top: 0.25rem;
+				padding-bottom: 0.25rem;
+			}
+
+			.py-4 {
+				padding-top: 1rem;
+				padding-bottom: 1rem;
+			}
+
+			.pr-20 {
+				padding-right: 5rem;
+			}
+
+			.text-center {
+				text-align: center;
+			}
+
+			.font-mono {
+				font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+					"Liberation Mono", "Courier New", monospace;
+			}
+
+			.text-3xl {
+				font-size: 1.875rem;
+				line-height: 2.25rem;
+			}
+
+			.text-lg {
+				font-size: 1.125rem;
+				line-height: 1.75rem;
+			}
+
+			.text-sm {
+				font-size: 0.875rem;
+				line-height: 1.25rem;
+			}
+
+			.text-xl {
+				font-size: 1.25rem;
+				line-height: 1.75rem;
+			}
+
+			.text-xs {
+				font-size: 0.75rem;
+				line-height: 1rem;
+			}
+
+			.font-bold {
+				font-weight: 700;
+			}
+
+			.font-medium {
+				font-weight: 500;
+			}
+
+			.font-semibold {
+				font-weight: 600;
+			}
+
+			.text-blue-600 {
+				--tw-text-opacity: 1;
+				color: rgb(37 99 235 / var(--tw-text-opacity, 1));
+			}
+
+			.text-blue-700 {
+				--tw-text-opacity: 1;
+				color: rgb(29 78 216 / var(--tw-text-opacity, 1));
+			}
+
+			.text-blue-800 {
+				--tw-text-opacity: 1;
+				color: rgb(30 64 175 / var(--tw-text-opacity, 1));
+			}
+
+			.text-gray-400 {
+				--tw-text-opacity: 1;
+				color: rgb(156 163 175 / var(--tw-text-opacity, 1));
+			}
+
+			.text-gray-600 {
+				--tw-text-opacity: 1;
+				color: rgb(75 85 99 / var(--tw-text-opacity, 1));
+			}
+
+			.text-gray-700 {
+				--tw-text-opacity: 1;
+				color: rgb(55 65 81 / var(--tw-text-opacity, 1));
+			}
+
+			.text-gray-800 {
+				--tw-text-opacity: 1;
+				color: rgb(31 41 55 / var(--tw-text-opacity, 1));
+			}
+
+			.text-gray-900 {
+				--tw-text-opacity: 1;
+				color: rgb(17 24 39 / var(--tw-text-opacity, 1));
+			}
+
+			.text-purple-700 {
+				--tw-text-opacity: 1;
+				color: rgb(126 34 206 / var(--tw-text-opacity, 1));
+			}
+
+			.text-white {
+				--tw-text-opacity: 1;
+				color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+			}
+
+			.text-gray-500 {
+				--tw-text-opacity: 1;
+				color: rgb(107 114 128 / var(--tw-text-opacity, 1));
+			}
+
+			.placeholder-gray-400::placeholder {
+				--tw-placeholder-opacity: 1;
+				color: rgb(156 163 175 / var(--tw-placeholder-opacity, 1));
+			}
+
+			.shadow-lg {
+				--tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+					0 4px 6px -4px rgb(0 0 0 / 0.1);
+				--tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),
+					0 4px 6px -4px var(--tw-shadow-color);
+				box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+					var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+			}
+
+			.shadow-md {
+				--tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+					0 2px 4px -2px rgb(0 0 0 / 0.1);
+				--tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),
+					0 2px 4px -2px var(--tw-shadow-color);
+				box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+					var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+			}
+
+			.outline-none {
+				outline: 2px solid transparent;
+				outline-offset: 2px;
+			}
+
+			.backdrop-blur-sm {
+				--tw-backdrop-blur: blur(4px);
+				-webkit-backdrop-filter: var(--tw-backdrop-blur)
+					var(--tw-backdrop-brightness) var(--tw-backdrop-contrast)
+					var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate)
+					var(--tw-backdrop-invert) var(--tw-backdrop-opacity)
+					var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+				backdrop-filter: var(--tw-backdrop-blur)
+					var(--tw-backdrop-brightness) var(--tw-backdrop-contrast)
+					var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate)
+					var(--tw-backdrop-invert) var(--tw-backdrop-opacity)
+					var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+			}
+
+			.transition-all {
+				transition-property: all;
+				transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+				transition-duration: 150ms;
+			}
+
+			.transition-colors {
+				transition-property: color, background-color, border-color, fill,
+					stroke, -webkit-text-decoration-color;
+				transition-property: color, background-color, border-color,
+					text-decoration-color, fill, stroke;
+				transition-property: color, background-color, border-color,
+					text-decoration-color, fill, stroke,
+					-webkit-text-decoration-color;
+				transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+				transition-duration: 150ms;
+			}
+
+			.duration-300 {
+				transition-duration: 300ms;
+			}
+
+			.hover\:scale-\[1\.02\]:hover {
+				--tw-scale-x: 1.02;
+				--tw-scale-y: 1.02;
+				transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+					rotate(var(--tw-rotate)) skewX(var(--tw-skew-x))
+					skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
+					scaleY(var(--tw-scale-y));
+			}
+
+			.focus\:ring-0:focus {
+				--tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0
+					var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+				--tw-ring-shadow: var(--tw-ring-inset) 0 0 0
+					calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+				box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+					var(--tw-shadow, 0 0 #0000);
+			}
+
+			.focus\:ring-blue-500:focus {
+				--tw-ring-opacity: 1;
+				--tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity, 1));
+			}
+
+			.group:hover .group-hover\:text-gray-600 {
+				--tw-text-opacity: 1;
+				color: rgb(75 85 99 / var(--tw-text-opacity, 1));
+			}
+
+			@media (min-width: 640px) {
+				.sm\:grid-cols-3 {
+					grid-template-columns: repeat(3, minmax(0, 1fr));
+				}
+			}
+
+			@media (min-width: 768px) {
+				.md\:grid-cols-2 {
+					grid-template-columns: repeat(2, minmax(0, 1fr));
+				}
+
+				.md\:grid-cols-4 {
+					grid-template-columns: repeat(4, minmax(0, 1fr));
+				}
+
+				.md\:text-2xl {
+					font-size: 1.5rem;
+					line-height: 2rem;
+				}
+			}
+
+			@media (min-width: 1024px) {
+				.lg\:grid-cols-5 {
+					grid-template-columns: repeat(5, minmax(0, 1fr));
+				}
+			}
+		</style>
+	</head>
+
+	<body class="bg-gray-100 text-gray-900 flex flex-col min-h-screen">
+		<!-- Barre de Navigation -->
+		<nav class="bg-white shadow-md sticky top-0 z-20">
+			<div
+				class="container mx-auto px-6 py-4 flex justify-between items-center">
+				<h1 class="text-xl md:text-2xl font-bold text-blue-800"
+					>Guide Word</h1
+				>
+				<div
+					class="text-sm text-gray-600 bg-gray-50 px-3 py-1 rounded-full border border-gray-200">
+					Progression :
+					<span id="progress-count" class="font-bold text-blue-700"
+						>13</span
+					>/20
+				</div>
+			</div>
+		</nav>
+
+		<!-- Contenu Principal -->
+		<main class="container mx-auto p-6 flex-grow">
+			<h2 class="text-3xl font-bold text-center mb-10 text-gray-800"
+				>Top 20 des Fonctionnalités et Raccourcis Word
+			</h2>
+
+			<!-- Grille des fonctionnalités -->
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+				<!-- 1. Copier/Coller/Couper -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-copypaste">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-blue-600 rounded focus:ring-blue-500 border-gray-300 cursor-pointer"
+								data-id="copypaste" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-blue-700 mb-2 pr-20"
+						>1. Copier / Coller / Couper</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Les raccourcis les plus fondamentaux pour manipuler du
+						texte.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Raccourcis :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Ctrl + C (Copier)
+Ctrl + X (Couper)
+Ctrl + V (Coller)</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Sélectionnez le texte et utilisez ces raccourcis pour le
+						déplacer ou le dupliquer rapidement.</p
+					>
+				</div>
+
+				<!-- 2. Annuler/Rétablir -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-undoredo">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-blue-600 rounded focus:ring-blue-500 border-gray-300 cursor-pointer"
+								data-id="undoredo" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-blue-700 mb-2 pr-20"
+						>2. Annuler / Rétablir</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Annule ou rétablit la dernière action effectuée.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Raccourcis :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Ctrl + Z (Annuler)
+Ctrl + Y (Rétablir)</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Indispensable pour corriger rapidement les erreurs ou revenir
+						en arrière.
+					</p>
+				</div>
+
+				<!-- 3. Enregistrer -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-save">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-blue-600 rounded focus:ring-blue-500 border-gray-300 cursor-pointer"
+								data-id="save" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-blue-700 mb-2 pr-20"
+						>3. Enregistrer</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Sauvegardez rapidement votre document pour ne pas perdre
+						votre travail.
+					</p>
+					<p class="text-sm font-medium text-gray-600">Raccourci :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Ctrl + S</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>À prendre comme habitude : enregistrez régulièrement votre
+						document.</p
+					>
+				</div>
+
+				<!-- 4. Gras/Italique/Souligné -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-formatting">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-blue-600 rounded focus:ring-blue-500 border-gray-300 cursor-pointer"
+								data-id="formatting" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-blue-700 mb-2 pr-20"
+						>4. Gras / Italique / Souligné</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Mettez en forme rapidement le texte sélectionné.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Raccourcis :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Ctrl + B (Gras)
+Ctrl + I (Italique)
+Ctrl + U (Souligné)</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Sélectionnez le texte et appliquez le style souhaité
+						instantanément.</p
+					>
+				</div>
+
+				<!-- 5. Tout Sélectionner -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-selectall">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-blue-600 rounded focus:ring-blue-500 border-gray-300 cursor-pointer"
+								data-id="selectall" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-blue-700 mb-2 pr-20"
+						>5. Tout Sélectionner</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Sélectionne l'intégralité du contenu du document.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Raccourci :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Ctrl + A</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Utile pour copier, formater ou supprimer tout le contenu d'un
+						document.
+					</p>
+				</div>
+
+				<!-- 6. Rechercher -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-find">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-blue-600 rounded focus:ring-blue-500 border-gray-300 cursor-pointer"
+								data-id="find" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-blue-700 mb-2 pr-20"
+						>6. Rechercher</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Ouvre le volet de navigation pour rechercher du texte dans le
+						document.
+					</p>
+					<p class="text-sm font-medium text-gray-600">Raccourci :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Ctrl + F</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Très pratique pour trouver rapidement un mot ou une phrase
+						dans de longs documents.</p
+					>
+				</div>
+
+				<!-- 7. Imprimer -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group card-acquired"
+					id="card-print">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-blue-600 rounded focus:ring-blue-500 border-gray-300 cursor-pointer"
+								data-id="print"
+								checked="checked" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-blue-700 mb-2 pr-20"
+						>7. Imprimer</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Ouvre la boîte de dialogue d'impression.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Raccourci :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Ctrl + P</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Accédez rapidement aux options d'impression et prévisualisez
+						votre document avant impression.</p
+					>
+				</div>
+
+				<!-- 8. Nouveau/Ouvrir/Fermer -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group card-acquired"
+					id="card-fileops">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-blue-600 rounded focus:ring-blue-500 border-gray-300 cursor-pointer"
+								data-id="fileops"
+								checked="checked" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-blue-700 mb-2 pr-20"
+						>8. Nouveau / Ouvrir / Fermer</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Gérez vos documents rapidement avec ces raccourcis.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Raccourcis :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Ctrl + N (Nouveau document)
+Ctrl + O (Ouvrir un document)
+Ctrl + W (Fermer le document actif)</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Naviguez entre vos documents sans utiliser la souris.</p
+					>
+				</div>
+
+				<!-- 9. Taille de Police -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group card-acquired"
+					id="card-fontsize">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-blue-600 rounded focus:ring-blue-500 border-gray-300 cursor-pointer"
+								data-id="fontsize"
+								checked="checked" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-blue-700 mb-2 pr-20"
+						>9. Augmenter / Réduire Taille Police</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Modifiez la taille de la police par incréments.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Raccourcis :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Ctrl + Maj + &gt; (Augmenter)
+Ctrl + Maj + &lt; (Diminuer)</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Ajustez rapidement la taille de police du texte
+						sélectionné.</p
+					>
+				</div>
+
+				<!-- 10. Insérer Lien Hypertexte -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group card-acquired"
+					id="card-hyperlink">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-blue-600 rounded focus:ring-blue-500 border-gray-300 cursor-pointer"
+								data-id="hyperlink"
+								checked="checked" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-blue-700 mb-2 pr-20"
+						>10. Insérer Lien Hypertexte</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Insère un lien hypertexte dans le document.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Raccourci :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Ctrl + K</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Sélectionnez du texte et appuyez sur Ctrl+K pour ajouter un
+						lien URL.</p
+					>
+				</div>
+
+				<!-- 11. Alignement du Texte -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group card-acquired"
+					id="card-align">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-blue-600 rounded focus:ring-blue-500 border-gray-300 cursor-pointer"
+								data-id="align"
+								checked="checked" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-blue-700 mb-2 pr-20"
+						>11. Alignement du Texte</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Alignez le texte à gauche, au centre, à droite ou
+						justifiez-le.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Raccourcis :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Ctrl + E (Centrer)
+Ctrl + L (Aligner à gauche)
+Ctrl + R (Aligner à droite)
+Ctrl + J (Justifier)</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Formatez rapidement l'alignement de vos paragraphes.</p
+					>
+				</div>
+
+				<!-- 12. Styles -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group card-acquired"
+					id="card-styles">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-blue-600 rounded focus:ring-blue-500 border-gray-300 cursor-pointer"
+								data-id="styles"
+								checked="checked" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-blue-700 mb-2 pr-20"
+						>12. Utilisation des Styles</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Appliquez des styles prédéfinis (Titre 1, Titre 2, Normal,
+						etc.) pour une mise en forme cohérente.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Avantages :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>- Homogénéité de la mise en forme
+- Génération automatique de table des matières
+- Navigation facile dans le document</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Accédez aux styles via l'onglet Accueil ou utilisez
+						Ctrl+Alt+1/2/3 pour Titre 1/2/3.</p
+					>
+				</div>
+
+				<!-- 13. Volet de Navigation -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group card-acquired"
+					id="card-navpane">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-blue-600 rounded focus:ring-blue-500 border-gray-300 cursor-pointer"
+								data-id="navpane"
+								checked="checked" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-blue-700 mb-2 pr-20"
+						>13. Volet de Navigation</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Affiche une vue d'ensemble du document avec les titres
+						structurés.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Activation :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Affichage &gt; Volet de navigation</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Naviguez facilement entre les sections de documents longs et
+						réorganisez le contenu.</p
+					>
+				</div>
+
+				<!-- 14. Suivi des Modifications -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group card-acquired"
+					id="card-trackchanges">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-blue-600 rounded focus:ring-blue-500 border-gray-300 cursor-pointer"
+								data-id="trackchanges"
+								checked="checked" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-blue-700 mb-2 pr-20"
+						>14. Suivi des Modifications</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Permet de contrôler et visualiser toutes les modifications
+						apportées au document.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Activation :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Révision &gt; Suivi des modifications
+Raccourci: Ctrl + Maj + E</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Essentiel pour la collaboration : toutes les modifications
+						sont enregistrées et visibles.</p
+					>
+				</div>
+
+				<!-- 15. Modèles de Documents -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group card-acquired"
+					id="card-templates">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-blue-600 rounded focus:ring-blue-500 border-gray-300 cursor-pointer"
+								data-id="templates"
+								checked="checked" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-blue-700 mb-2 pr-20"
+						>15. Modèles de Documents</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Utilisez des modèles prédéfinis pour créer rapidement des
+						documents professionnels.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Types :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>- CV et lettres de motivation
+- Rapports et documents académiques
+- Factures et documents commerciaux
+- Invitations et cartes</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Fichier &gt; Nouveau &gt; Parcourez les modèles
+						disponibles.</p
+					>
+				</div>
+
+				<!-- 16. Presse-papiers Office -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group card-acquired"
+					id="card-clipboard">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-blue-600 rounded focus:ring-blue-500 border-gray-300 cursor-pointer"
+								data-id="clipboard"
+								checked="checked" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-blue-700 mb-2 pr-20"
+						>16. Presse-papiers Office</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Conserve jusqu'à 24 éléments copiés en mémoire pour les
+						coller ultérieurement.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Accès :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Accueil &gt; Presse-papiers (clic sur la flèche)</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Très pratique pour copier plusieurs éléments à la fois et les
+						coller sélectivement.</p
+					>
+				</div>
+
+				<!-- 17. Dictée Vocale -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group card-acquired"
+					id="card-dictation">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-blue-600 rounded focus:ring-blue-500 border-gray-300 cursor-pointer"
+								data-id="dictation"
+								checked="checked" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-blue-700 mb-2 pr-20"
+						>17. Fonction Dictée</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Convertit la parole en texte directement dans Word.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Activation :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Accueil &gt; Dicter
+Ou utilisez le micro dans la barre d'outils</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Idéal pour rédiger de longs passages sans taper au
+						clavier.</p
+					>
+				</div>
+
+				<!-- 18. Mode Lecture -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group card-acquired"
+					id="card-readmode">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-blue-600 rounded focus:ring-blue-500 border-gray-300 cursor-pointer"
+								data-id="readmode"
+								checked="checked" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-blue-700 mb-2 pr-20"
+						>18. Mode Lecture</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Lisez les documents sans distraction avec un affichage
+						optimisé.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Activation :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Affichage &gt; Mode Lecture</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Parfait pour réviser des documents longs avec des options
+						pour zoomer et annoter.</p
+					>
+				</div>
+
+				<!-- 19. Recherche Intelligente -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-smartlookup">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-blue-600 rounded focus:ring-blue-500 border-gray-300 cursor-pointer"
+								data-id="smartlookup" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-blue-700 mb-2 pr-20"
+						>19. Recherche Intelligente</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Recherchez des informations sur Internet directement depuis
+						Word.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Activation :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Clic droit sur un mot &gt; Recherche intelligente
+Ou: Alt + Clic sur un mot</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Obtenez des définitions, Wikipedia et plus sans quitter votre
+						document.
+					</p>
+				</div>
+
+				<!-- 20. Insertion d'Éléments Visuels -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group card-acquired"
+					id="card-visuals">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-blue-600 rounded focus:ring-blue-500 border-gray-300 cursor-pointer"
+								data-id="visuals"
+								checked="checked" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-blue-700 mb-2 pr-20"
+						>20. Insertion d'Éléments Visuels</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Word offre une vaste bibliothèque d'éléments visuels pour
+						enrichir vos documents.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Types :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>- Images et photos
+- Icônes professionnelles
+- Formes et SmartArt
+- Graphiques et diagrammes
+- Modèles 3D</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Insertion &gt; Images/Icônes/Formes pour rendre vos documents
+						visuellement attrayants.</p
+					>
+				</div>
+			</div>
+
+			<!-- Section Récapitulatif Compact -->
+			<section
+				id="summary-section"
+				class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+				<h3
+					class="text-lg font-bold text-gray-800 mb-4 flex items-center flex-wrap">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="h-5 w-5 mr-2 text-blue-600"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor">
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+					</svg>
+					Récapitulatif de
+					<input
+						type="text"
+						id="user-name"
+						placeholder="[Votre Prénom]"
+						class="ml-2 bg-transparent border-none focus:ring-0 p-0 text-lg font-bold text-gray-800 placeholder-gray-400 w-64 outline-none" />
+				</h3>
+				<div
+					class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3"
+					id="summary-grid">
+					<div
+						id="summary-copypaste"
+						class="flex items-center justify-between p-2 rounded border border-gray-200 text-xs font-medium text-gray-500 transition-colors bg-white">
+						<span>1. Copier/Coller</span>
+						<span class="status-icon">○</span>
+					</div>
+					<div
+						id="summary-undoredo"
+						class="flex items-center justify-between p-2 rounded border border-gray-200 text-xs font-medium text-gray-500 transition-colors bg-white">
+						<span>2. Annuler/Rétablir</span>
+						<span class="status-icon">○</span>
+					</div>
+					<div
+						id="summary-save"
+						class="flex items-center justify-between p-2 rounded border border-gray-200 text-xs font-medium text-gray-500 transition-colors bg-white">
+						<span>3. Enregistrer</span>
+						<span class="status-icon">○</span>
+					</div>
+					<div
+						id="summary-formatting"
+						class="flex items-center justify-between p-2 rounded border border-gray-200 text-xs font-medium text-gray-500 transition-colors bg-white">
+						<span>4. Formatage</span>
+						<span class="status-icon">○</span>
+					</div>
+					<div
+						id="summary-selectall"
+						class="flex items-center justify-between p-2 rounded border border-gray-200 text-xs font-medium text-gray-500 transition-colors bg-white">
+						<span>5. Tout Sélectionner</span>
+						<span class="status-icon">○</span>
+					</div>
+					<div
+						id="summary-find"
+						class="flex items-center justify-between p-2 rounded border border-gray-200 text-xs font-medium text-gray-500 transition-colors bg-white">
+						<span>6. Rechercher</span>
+						<span class="status-icon">○</span>
+					</div>
+					<div
+						id="summary-print"
+						class="flex items-center justify-between p-2 rounded border border-gray-200 text-xs font-medium transition-colors summary-item-acquired">
+						<span>7. Imprimer</span>
+						<span class="status-icon">✓</span>
+					</div>
+					<div
+						id="summary-fileops"
+						class="flex items-center justify-between p-2 rounded border border-gray-200 text-xs font-medium transition-colors summary-item-acquired">
+						<span>8. Fichiers</span>
+						<span class="status-icon">✓</span>
+					</div>
+					<div
+						id="summary-fontsize"
+						class="flex items-center justify-between p-2 rounded border border-gray-200 text-xs font-medium transition-colors summary-item-acquired">
+						<span>9. Taille Police</span>
+						<span class="status-icon">✓</span>
+					</div>
+					<div
+						id="summary-hyperlink"
+						class="flex items-center justify-between p-2 rounded border border-gray-200 text-xs font-medium transition-colors summary-item-acquired">
+						<span>10. Lien</span>
+						<span class="status-icon">✓</span>
+					</div>
+					<div
+						id="summary-align"
+						class="flex items-center justify-between p-2 rounded border border-gray-200 text-xs font-medium transition-colors summary-item-acquired">
+						<span>11. Alignement</span>
+						<span class="status-icon">✓</span>
+					</div>
+					<div
+						id="summary-styles"
+						class="flex items-center justify-between p-2 rounded border border-gray-200 text-xs font-medium transition-colors summary-item-acquired">
+						<span>12. Styles</span>
+						<span class="status-icon">✓</span>
+					</div>
+					<div
+						id="summary-navpane"
+						class="flex items-center justify-between p-2 rounded border border-gray-200 text-xs font-medium transition-colors summary-item-acquired">
+						<span>13. Navigation</span>
+						<span class="status-icon">✓</span>
+					</div>
+					<div
+						id="summary-trackchanges"
+						class="flex items-center justify-between p-2 rounded border border-gray-200 text-xs font-medium transition-colors summary-item-acquired">
+						<span>14. Suivi</span>
+						<span class="status-icon">✓</span>
+					</div>
+					<div
+						id="summary-templates"
+						class="flex items-center justify-between p-2 rounded border border-gray-200 text-xs font-medium transition-colors summary-item-acquired">
+						<span>15. Modèles</span>
+						<span class="status-icon">✓</span>
+					</div>
+					<div
+						id="summary-clipboard"
+						class="flex items-center justify-between p-2 rounded border border-gray-200 text-xs font-medium transition-colors summary-item-acquired">
+						<span>16. Presse-papiers</span>
+						<span class="status-icon">✓</span>
+					</div>
+					<div
+						id="summary-dictation"
+						class="flex items-center justify-between p-2 rounded border border-gray-200 text-xs font-medium transition-colors summary-item-acquired">
+						<span>17. Dictée</span>
+						<span class="status-icon">✓</span>
+					</div>
+					<div
+						id="summary-readmode"
+						class="flex items-center justify-between p-2 rounded border border-gray-200 text-xs font-medium transition-colors summary-item-acquired">
+						<span>18. Mode Lecture</span>
+						<span class="status-icon">✓</span>
+					</div>
+					<div
+						id="summary-smartlookup"
+						class="flex items-center justify-between p-2 rounded border border-gray-200 text-xs font-medium text-gray-500 transition-colors bg-white">
+						<span>19. Recherche Intel.</span>
+						<span class="status-icon">○</span>
+					</div>
+					<div
+						id="summary-visuals"
+						class="flex items-center justify-between p-2 rounded border border-gray-200 text-xs font-medium transition-colors summary-item-acquired">
+						<span>20. Visuels</span>
+						<span class="status-icon">✓</span>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<!-- Footer -->
+		<footer class="bg-gray-800 text-white p-6 mt-12">
+			<div class="container mx-auto text-center text-sm">
+				<p>© 2025 Guide Word. Contenu généré à titre informatif.</p>
+			</div>
+		</footer>
+
+		<!-- Script de gestion du LocalStorage et des interactions -->
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				const checkboxes = document.querySelectorAll(".mastery-checkbox");
+				const progressCount = document.getElementById("progress-count");
+				const summaryGrid = document.getElementById("summary-grid");
+				const userNameInput = document.getElementById("user-name");
+
+				const STORAGE_KEY = "wordMasteryProgress";
+				const NAME_KEY = "wordMasteryName";
+
+				// Liste des fonctionnalités pour le résumé (Doit correspondre aux data-id)
+				const functionsList = [
+					{ id: "copypaste", name: "1. Copier/Coller" },
+					{ id: "undoredo", name: "2. Annuler/Rétablir" },
+					{ id: "save", name: "3. Enregistrer" },
+					{ id: "formatting", name: "4. Formatage" },
+					{ id: "selectall", name: "5. Tout Sélectionner" },
+					{ id: "find", name: "6. Rechercher" },
+					{ id: "print", name: "7. Imprimer" },
+					{ id: "fileops", name: "8. Fichiers" },
+					{ id: "fontsize", name: "9. Taille Police" },
+					{ id: "hyperlink", name: "10. Lien" },
+					{ id: "align", name: "11. Alignement" },
+					{ id: "styles", name: "12. Styles" },
+					{ id: "navpane", name: "13. Navigation" },
+					{ id: "trackchanges", name: "14. Suivi" },
+					{ id: "templates", name: "15. Modèles" },
+					{ id: "clipboard", name: "16. Presse-papiers" },
+					{ id: "dictation", name: "17. Dictée" },
+					{ id: "readmode", name: "18. Mode Lecture" },
+					{ id: "smartlookup", name: "19. Recherche Intel." },
+					{ id: "visuals", name: "20. Visuels" },
+				];
+
+				// Initialiser la grille de résumé
+				const initSummary = () => {
+					summaryGrid.innerHTML = "";
+					functionsList.forEach((func) => {
+						const div = document.createElement("div");
+						div.id = `summary-${func.id}`;
+						div.className =
+							"flex items-center justify-between p-2 rounded border border-gray-200 text-xs font-medium text-gray-500 transition-colors";
+						div.innerHTML = `
+                        <span>${func.name}</span>
+                        <span class="status-icon">○</span>
+                    `;
+						summaryGrid.appendChild(div);
+					});
+				};
+
+				// Mettre à jour un élément du résumé
+				const updateSummaryItem = (id, isAcquired) => {
+					const item = document.getElementById(`summary-${id}`);
+					if (item) {
+						if (isAcquired) {
+							item.classList.add("summary-item-acquired");
+							item.classList.remove("bg-white", "text-gray-500");
+							item.querySelector(".status-icon").innerHTML = "✓";
+						} else {
+							item.classList.remove("summary-item-acquired");
+							item.classList.add("bg-white", "text-gray-500");
+							item.querySelector(".status-icon").innerHTML = "○";
+						}
+					}
+				};
+
+				// Charger l'état
+				const loadState = () => {
+					// Charger le nom
+					const savedName = localStorage.getItem(NAME_KEY);
+					if (savedName) {
+						userNameInput.value = savedName;
+					}
+
+					// Charger les cases à cocher
+					const savedState =
+						JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+					let count = 0;
+
+					checkboxes.forEach((box) => {
+						const id = box.dataset.id;
+						const isChecked = savedState[id] === true;
+
+						if (isChecked) {
+							box.checked = true;
+							count++;
+						}
+
+						markCardAsAcquired(box);
+						updateSummaryItem(id, isChecked);
+					});
+					updateProgress(count);
+				};
+
+				// Sauvegarder l'état
+				const saveState = () => {
+					const state = {};
+					let count = 0;
+					checkboxes.forEach((box) => {
+						state[box.dataset.id] = box.checked;
+						if (box.checked) count++;
+					});
+					localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+					updateProgress(count);
+				};
+
+				// Fonction visuelle carte
+				const markCardAsAcquired = (checkbox) => {
+					const card = checkbox.closest(".bg-white");
+					if (checkbox.checked) {
+						card.classList.add("card-acquired");
+					} else {
+						card.classList.remove("card-acquired");
+					}
+				};
+
+				const updateProgress = (count) => {
+					progressCount.textContent = count;
+				};
+
+				// Initialisation
+				initSummary();
+				loadState();
+
+				// Listeners pour les checkboxes
+				checkboxes.forEach((box) => {
+					box.addEventListener("change", (e) => {
+						markCardAsAcquired(e.target);
+						updateSummaryItem(e.target.dataset.id, e.target.checked);
+						saveState();
+					});
+				});
+
+				// Listener pour le nom
+				userNameInput.addEventListener("input", (e) => {
+					localStorage.setItem(NAME_KEY, e.target.value);
+				});
+			});
+		</script>
+	</body>
+</html>

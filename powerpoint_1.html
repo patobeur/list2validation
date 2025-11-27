@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Top 20 des Fonctionnalités PowerPoint</title>
+		<!-- Chargement de Tailwind CSS -->
+		<script src="tailwind/3.4.17"></script>
+		<!-- Configuration de la police Système (Locale) -->
+		<script>
+			tailwind.config = {
+				theme: {
+					extend: {
+						fontFamily: {
+							sans: [
+								"system-ui",
+								"-apple-system",
+								"Segoe UI",
+								"Roboto",
+								"Helvetica",
+								"Arial",
+								"sans-serif",
+							],
+						},
+					},
+				},
+			};
+		</script>
+		<style>
+			body {
+				/* Utilisation de la pile de polices système native pour un rendu optimal et rapide */
+				font-family: system-ui, -apple-system, "Segoe UI", Roboto,
+					"Helvetica Neue", "Noto Sans", "Liberation Sans", Arial,
+					sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+					"Segoe UI Symbol", "Noto Color Emoji";
+			}
+
+			/* Style simple pour la transition de couleur de fond */
+			.card-acquired {
+				background-color: #fff7ed !important;
+				/* orange-50 */
+				border: 2px solid #f97316;
+				/* orange-500 */
+			}
+
+			.summary-item-acquired {
+				background-color: #ffedd5;
+				/* orange-100 */
+				color: #7c2d12;
+				/* orange-900 */
+				border-color: #f97316;
+				/* orange-500 */
+			}
+		</style>
+	</head>
+
+	<body class="bg-gray-100 text-gray-900 flex flex-col min-h-screen">
+		<!-- Barre de Navigation -->
+		<nav class="bg-white shadow-md sticky top-0 z-20">
+			<div
+				class="container mx-auto px-6 py-4 flex justify-between items-center">
+				<h1 class="text-xl md:text-2xl font-bold text-orange-800"
+					>Guide PowerPoint</h1
+				>
+				<div
+					class="text-sm text-gray-600 bg-gray-50 px-3 py-1 rounded-full border border-gray-200">
+					Progression :
+					<span id="progress-count" class="font-bold text-orange-700"
+						>0</span
+					>/20
+				</div>
+			</div>
+		</nav>
+
+		<!-- Contenu Principal -->
+		<main class="container mx-auto p-6 flex-grow">
+			<h2 class="text-3xl font-bold text-center mb-10 text-gray-800"
+				>Top 20 des Fonctionnalités et Astuces PowerPoint
+			</h2>
+
+			<!-- Grille des fonctionnalités -->
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+				<!-- 1. Transition Morphose -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-morph">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-orange-600 rounded focus:ring-orange-500 border-gray-300 cursor-pointer"
+								data-id="morph" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-orange-700 mb-2 pr-20"
+						>1. Transition Morphose (Morph)</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Créez des animations fluides et professionnelles entre vos
+						diapositives.
+					</p>
+					<p class="text-sm font-medium text-gray-600"
+						>Comment utiliser :</p
+					>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>1. Dupliquez une diapositive (Ctrl+D)
+2. Modifiez les objets sur la copie
+3. Transitions > Morphose</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Idéal pour montrer des transformations, des processus ou des
+						changements.
+					</p>
+				</div>
+
+				<!-- 2. Concepteur (Designer) -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-designer">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-orange-600 rounded focus:ring-orange-500 border-gray-300 cursor-pointer"
+								data-id="designer" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-orange-700 mb-2 pr-20"
+						>2. Concepteur IA (Designer)</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Intelligence artificielle qui suggère automatiquement des
+						designs professionnels.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Activation :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Création > Concepteur
+Ou automatique lors de l'ajout de contenu</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Gagnez du temps avec des suggestions de mise en page
+						instantanées.</p
+					>
+				</div>
+
+				<!-- 3. Nouvelle Diapositive -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-newslide">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-orange-600 rounded focus:ring-orange-500 border-gray-300 cursor-pointer"
+								data-id="newslide" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-orange-700 mb-2 pr-20"
+						>3. Nouvelle Diapositive</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Ajoutez rapidement une nouvelle diapositive à votre
+						présentation.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Raccourci :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Ctrl + M</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Le raccourci le plus utilisé lors de la création de
+						présentations.</p
+					>
+				</div>
+
+				<!-- 4. Dupliquer -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-duplicate">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-orange-600 rounded focus:ring-orange-500 border-gray-300 cursor-pointer"
+								data-id="duplicate" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-orange-700 mb-2 pr-20"
+						>4. Dupliquer Diapositive/Objet</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Créez une copie exacte d'une diapositive ou d'un objet
+						sélectionné.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Raccourci :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Ctrl + D</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Essentiel pour créer des variations ou réutiliser des
+						éléments de design.
+					</p>
+				</div>
+
+				<!-- 5. Démarrer la Présentation -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-startshow">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-orange-600 rounded focus:ring-orange-500 border-gray-300 cursor-pointer"
+								data-id="startshow" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-orange-700 mb-2 pr-20"
+						>5. Démarrer la Présentation</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Lancez le diaporama depuis le début ou depuis la diapositive
+						actuelle.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Raccourcis :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>F5 (Depuis le début)
+Maj + F5 (Depuis la diapo actuelle)</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Testez votre présentation rapidement à tout moment.</p
+					>
+				</div>
+
+				<!-- 6. Écran Noir/Blanc -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-blackwhite">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-orange-600 rounded focus:ring-orange-500 border-gray-300 cursor-pointer"
+								data-id="blackwhite" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-orange-700 mb-2 pr-20"
+						>6. Écran Noir/Blanc Pendant Présentation
+					</h3>
+					<p class="text-gray-700 mb-3"
+						>Masquez temporairement le contenu pour recentrer l'attention
+						sur vous.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Raccourcis :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>B (Écran noir)
+W (Écran blanc)</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Parfait pour les pauses ou discussions pendant une
+						présentation.</p
+					>
+				</div>
+
+				<!-- 7. Grouper/Dégrouper Objets -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-group">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-orange-600 rounded focus:ring-orange-500 border-gray-300 cursor-pointer"
+								data-id="group" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-orange-700 mb-2 pr-20"
+						>7. Grouper / Dégrouper Objets</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Combinez plusieurs objets en un seul ou séparez-les.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Raccourcis :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Ctrl + G (Grouper)
+Ctrl + Maj + G (Dégrouper)</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Déplacez et redimensionnez plusieurs éléments ensemble
+						facilement.</p
+					>
+				</div>
+
+				<!-- 8. Aligner le Texte -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-align">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-orange-600 rounded focus:ring-orange-500 border-gray-300 cursor-pointer"
+								data-id="align" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-orange-700 mb-2 pr-20"
+						>8. Alignement du Texte</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Alignez rapidement votre texte à gauche, au centre ou à
+						droite.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Raccourcis :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Ctrl + L (Gauche)
+Ctrl + E (Centre)
+Ctrl + R (Droite)</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Formatez vos diapositives de manière cohérente et
+						professionnelle.</p
+					>
+				</div>
+
+				<!-- 9. Augmenter/Réduire Taille Police -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-fontsize">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-orange-600 rounded focus:ring-orange-500 border-gray-300 cursor-pointer"
+								data-id="fontsize" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-orange-700 mb-2 pr-20"
+						>9. Augmenter / Réduire Taille Police</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Ajustez la taille du texte par incréments.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Raccourcis :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Ctrl + Maj + > (Augmenter)
+Ctrl + Maj + < (Diminuer)</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Trouvez rapidement la taille optimale pour votre contenu.</p
+					>
+				</div>
+
+				<!-- 10. Gras/Italique/Souligné -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-formatting">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-orange-600 rounded focus:ring-orange-500 border-gray-300 cursor-pointer"
+								data-id="formatting" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-orange-700 mb-2 pr-20"
+						>10. Gras / Italique / Souligné</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Appliquez un formatage de base au texte sélectionné.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Raccourcis :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Ctrl + B (Gras)
+Ctrl + I (Italique)
+Ctrl + U (Souligné)</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Mettez en valeur les points importants de votre
+						présentation.</p
+					>
+				</div>
+
+				<!-- 11. Copier le Format -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-copyformat">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-orange-600 rounded focus:ring-orange-500 border-gray-300 cursor-pointer"
+								data-id="copyformat" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-orange-700 mb-2 pr-20"
+						>11. Copier / Coller le Format</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Reproduisez rapidement le formatage d'un objet à un autre.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Raccourcis :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Ctrl + Maj + C (Copier format)
+Ctrl + Maj + V (Coller format)</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Maintenez la cohérence visuelle sans effort dans toute votre
+						présentation.
+					</p>
+				</div>
+
+				<!-- 12. Sélectionner Tout -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-selectall">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-orange-600 rounded focus:ring-orange-500 border-gray-300 cursor-pointer"
+								data-id="selectall" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-orange-700 mb-2 pr-20"
+						>12. Tout Sélectionner</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Sélectionnez tout le texte ou tous les objets sur une
+						diapositive.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Raccourci :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Ctrl + A</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Modifiez plusieurs éléments en même temps pour gagner du
+						temps.</p
+					>
+				</div>
+
+				<!-- 13. Enregistrer -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-save">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-orange-600 rounded focus:ring-orange-500 border-gray-300 cursor-pointer"
+								data-id="save" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-orange-700 mb-2 pr-20"
+						>13. Enregistrer</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Sauvegardez votre travail régulièrement.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Raccourci :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Ctrl + S</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Prenez l'habitude de sauvegarder fréquemment pour éviter
+						toute perte de données.</p
+					>
+				</div>
+
+				<!-- 14. Annuler/Rétablir -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-undoredo">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-orange-600 rounded focus:ring-orange-500 border-gray-300 cursor-pointer"
+								data-id="undoredo" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-orange-700 mb-2 pr-20"
+						>14. Annuler / Rétablir</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Annulez ou rétablissez les modifications récentes.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Raccourcis :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Ctrl + Z (Annuler)
+Ctrl + Y (Rétablir)</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Expérimentez sans crainte, vous pouvez toujours revenir en
+						arrière.</p
+					>
+				</div>
+
+				<!-- 15. Pointeur Laser/Stylo -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-pointer">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-orange-600 rounded focus:ring-orange-500 border-gray-300 cursor-pointer"
+								data-id="pointer" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-orange-700 mb-2 pr-20"
+						>15. Pointeur Laser / Stylo</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Attirez l'attention sur des éléments spécifiques pendant
+						votre présentation.</p
+					>
+					<p class="text-sm font-medium text-gray-600"
+						>Raccourcis (pendant diaporama) :</p
+					>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Ctrl + L (Pointeur laser)
+Ctrl + P (Stylo)
+Ctrl + I (Surligneur)</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Annotez et mettez en évidence en direct pendant votre
+						présentation.</p
+					>
+				</div>
+
+				<!-- 16. Mode Présentateur -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-presenter">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-orange-600 rounded focus:ring-orange-500 border-gray-300 cursor-pointer"
+								data-id="presenter" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-orange-700 mb-2 pr-20"
+						>16. Mode Présentateur</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Affichez vos notes et la diapositive suivante sur votre écran
+						seulement.
+					</p>
+					<p class="text-sm font-medium text-gray-600">Activation :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Diaporama > Utiliser le mode Présentateur
+Ou Alt + F5</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Présentez avec confiance tout en gardant un œil sur vos
+						notes.</p
+					>
+				</div>
+
+				<!-- 17. QuickStarter -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-quickstarter">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-orange-600 rounded focus:ring-orange-500 border-gray-300 cursor-pointer"
+								data-id="quickstarter" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-orange-700 mb-2 pr-20"
+						>17. QuickStarter (Recherche IA)</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Générez automatiquement un plan de présentation basé sur un
+						sujet.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Activation :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Fichier > Nouveau > QuickStarter
+Entrez votre sujet</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Commencez vos présentations avec une structure
+						professionnelle instantanée.</p
+					>
+				</div>
+
+				<!-- 18. Zoom sur Diapositive -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-zoom">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-orange-600 rounded focus:ring-orange-500 border-gray-300 cursor-pointer"
+								data-id="zoom" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-orange-700 mb-2 pr-20"
+						>18. Zoom (Navigation Non-linéaire)</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Créez des présentations interactives avec navigation
+						flexible.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Activation :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Insertion > Zoom > Zoom sur diapositive
+Sélectionnez les diapositives cibles</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Présentez de manière dynamique en sautant entre les sections
+						selon les besoins.</p
+					>
+				</div>
+
+				<!-- 19. Collaboration en Temps Réel -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-collab">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-orange-600 rounded focus:ring-orange-500 border-gray-300 cursor-pointer"
+								data-id="collab" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-orange-700 mb-2 pr-20"
+						>19. Collaboration en Temps Réel</h3
+					>
+					<p class="text-gray-700 mb-3"
+						>Travaillez simultanément avec d'autres personnes sur la même
+						présentation.
+					</p>
+					<p class="text-sm font-medium text-gray-600">Activation :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Partager > Inviter des personnes
+Stockez sur OneDrive/SharePoint</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Créez des présentations en équipe avec modifications visibles
+						en direct.
+					</p>
+				</div>
+
+				<!-- 20. SmartArt & Graphiques -->
+				<div
+					class="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] break-words relative group"
+					id="card-smartart">
+					<div class="absolute top-5 right-5 z-10">
+						<label
+							class="flex items-center space-x-2 cursor-pointer bg-white/80 p-1 rounded backdrop-blur-sm">
+							<span
+								class="text-xs text-gray-400 group-hover:text-gray-600 transition-colors select-none"
+								>Acquis</span
+							>
+							<input
+								type="checkbox"
+								class="mastery-checkbox w-5 h-5 text-orange-600 rounded focus:ring-orange-500 border-gray-300 cursor-pointer"
+								data-id="smartart" />
+						</label>
+					</div>
+					<h3 class="text-xl font-semibold text-orange-700 mb-2 pr-20"
+						>20. SmartArt & Graphiques Professionnels
+					</h3>
+					<p class="text-gray-700 mb-3"
+						>Transformez vos listes en diagrammes visuels
+						professionnels.</p
+					>
+					<p class="text-sm font-medium text-gray-600">Activation :</p>
+					<pre
+						class="bg-gray-100 p-3 rounded text-sm font-mono text-purple-700 overflow-x-auto whitespace-pre-wrap"><code>Insertion > SmartArt
+Choisissez un type : Processus, Hiérarchie, etc.</code></pre>
+					<p class="text-sm font-medium text-gray-600 mt-3">Usage :</p>
+					<p class="text-gray-700 mb-1"
+						>Visualisez des données et processus complexes de manière
+						claire et attrayante.</p
+					>
+				</div>
+			</div>
+
+			<!-- Section Récapitulatif Compact -->
+			<section
+				id="summary-section"
+				class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+				<h3
+					class="text-lg font-bold text-gray-800 mb-4 flex items-center flex-wrap">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="h-5 w-5 mr-2 text-orange-600"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor">
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+					</svg>
+					Récapitulatif de
+					<input
+						type="text"
+						id="user-name"
+						placeholder="[Votre Prénom]"
+						class="ml-2 bg-transparent border-none focus:ring-0 p-0 text-lg font-bold text-gray-800 placeholder-gray-400 w-64 outline-none" />
+				</h3>
+				<div
+					class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3"
+					id="summary-grid">
+				</div>
+			</section>
+		</main>
+
+		<!-- Footer -->
+		<footer class="bg-gray-800 text-white p-6 mt-12">
+			<div class="container mx-auto text-center text-sm">
+				<p>© 2025 Guide PowerPoint. Contenu généré à titre informatif.</p>
+			</div>
+		</footer>
+
+		<!-- Script de gestion du LocalStorage et des interactions -->
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				const checkboxes = document.querySelectorAll(".mastery-checkbox");
+				const progressCount = document.getElementById("progress-count");
+				const summaryGrid = document.getElementById("summary-grid");
+				const userNameInput = document.getElementById("user-name");
+
+				const STORAGE_KEY = "powerpointMasteryProgress";
+				const NAME_KEY = "powerpointMasteryName";
+
+				// Liste des fonctionnalités pour le résumé (Doit correspondre aux data-id)
+				const functionsList = [
+					{ id: "morph", name: "1. Morphose" },
+					{ id: "designer", name: "2. Designer" },
+					{ id: "newslide", name: "3. Nouvelle Diapo" },
+					{ id: "duplicate", name: "4. Dupliquer" },
+					{ id: "startshow", name: "5. Démarrer" },
+					{ id: "blackwhite", name: "6. Écran N/B" },
+					{ id: "group", name: "7. Grouper" },
+					{ id: "align", name: "8. Alignement" },
+					{ id: "fontsize", name: "9. Taille Police" },
+					{ id: "formatting", name: "10. Formatage" },
+					{ id: "copyformat", name: "11. Copier Format" },
+					{ id: "selectall", name: "12. Tout Sélect." },
+					{ id: "save", name: "13. Enregistrer" },
+					{ id: "undoredo", name: "14. Annuler/Rétab." },
+					{ id: "pointer", name: "15. Pointeur" },
+					{ id: "presenter", name: "16. Présentateur" },
+					{ id: "quickstarter", name: "17. QuickStarter" },
+					{ id: "zoom", name: "18. Zoom" },
+					{ id: "collab", name: "19. Collaboration" },
+					{ id: "smartart", name: "20. SmartArt" },
+				];
+
+				// Initialiser la grille de résumé
+				const initSummary = () => {
+					summaryGrid.innerHTML = "";
+					functionsList.forEach((func) => {
+						const div = document.createElement("div");
+						div.id = `summary-${func.id}`;
+						div.className =
+							"flex items-center justify-between p-2 rounded border border-gray-200 text-xs font-medium text-gray-500 transition-colors";
+						div.innerHTML = `
+                        <span>${func.name}</span>
+                        <span class="status-icon">○</span>
+                    `;
+						summaryGrid.appendChild(div);
+					});
+				};
+
+				// Mettre à jour un élément du résumé
+				const updateSummaryItem = (id, isAcquired) => {
+					const item = document.getElementById(`summary-${id}`);
+					if (item) {
+						if (isAcquired) {
+							item.classList.add("summary-item-acquired");
+							item.classList.remove("bg-white", "text-gray-500");
+							item.querySelector(".status-icon").innerHTML = "✓";
+						} else {
+							item.classList.remove("summary-item-acquired");
+							item.classList.add("bg-white", "text-gray-500");
+							item.querySelector(".status-icon").innerHTML = "○";
+						}
+					}
+				};
+
+				// Charger l'état
+				const loadState = () => {
+					// Charger le nom
+					const savedName = localStorage.getItem(NAME_KEY);
+					if (savedName) {
+						userNameInput.value = savedName;
+					}
+
+					// Charger les cases à cocher
+					const savedState =
+						JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+					let count = 0;
+
+					checkboxes.forEach((box) => {
+						const id = box.dataset.id;
+						const isChecked = savedState[id] === true;
+
+						if (isChecked) {
+							box.checked = true;
+							count++;
+						}
+
+						markCardAsAcquired(box);
+						updateSummaryItem(id, isChecked);
+					});
+					updateProgress(count);
+				};
+
+				// Sauvegarder l'état
+				const saveState = () => {
+					const state = {};
+					let count = 0;
+					checkboxes.forEach((box) => {
+						state[box.dataset.id] = box.checked;
+						if (box.checked) count++;
+					});
+					localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+					updateProgress(count);
+				};
+
+				// Fonction visuelle carte
+				const markCardAsAcquired = (checkbox) => {
+					const card = checkbox.closest(".bg-white");
+					if (checkbox.checked) {
+						card.classList.add("card-acquired");
+					} else {
+						card.classList.remove("card-acquired");
+					}
+				};
+
+				const updateProgress = (count) => {
+					progressCount.textContent = count;
+				};
+
+				// Initialisation
+				initSummary();
+				loadState();
+
+				// Listeners pour les checkboxes
+				checkboxes.forEach((box) => {
+					box.addEventListener("change", (e) => {
+						markCardAsAcquired(e.target);
+						updateSummaryItem(e.target.dataset.id, e.target.checked);
+						saveState();
+					});
+				});
+
+				// Listener pour le nom
+				userNameInput.addEventListener("input", (e) => {
+					localStorage.setItem(NAME_KEY, e.target.value);
+				});
+			});
+		</script>
+	</body>
+</html>
