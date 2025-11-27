@@ -540,7 +540,7 @@
 
 		<!-- Script de récupération des progressions -->
 		<script>
-			document.addEventListener("DOMContentLoaded", () => {
+			window.addEventListener("load", () => {
 				const storageKeys = {
 					excel: "excelMasteryProgress",
 					word: "wordMasteryProgress",
@@ -549,23 +549,13 @@
 
 				const countAcquiredSkills = (storageKey) => {
 					const rawData = localStorage.getItem(storageKey);
-					console.log(`[DEBUG] Reading ${storageKey}:`, rawData);
 					const data = JSON.parse(rawData) || {};
-					const count = Object.values(data).filter(
-						(val) => val === true
-					).length;
-					console.log(`[DEBUG] Count for ${storageKey}:`, count);
-					return count;
+					return Object.values(data).filter(Boolean).length;
 				};
 
 				const updateProgressCircle = (circleId, percentage) => {
 					const circle = document.getElementById(circleId);
-					if (!circle) {
-						console.error(
-							`[DEBUG] Circle element not found: ${circleId}`
-						);
-						return;
-					}
+					if (!circle) return;
 					const circumference = 175.93;
 					const offset =
 						circumference - (percentage / 100) * circumference;
@@ -573,13 +563,10 @@
 				};
 
 				const updateCard = (prefix, count, total = 20) => {
-					console.log(`[DEBUG] Updating card: ${prefix}, Count: ${count}`);
-					const percentage = Math.round((count / total) * 100);
+					const percentage = total > 0 ? Math.round((count / total) * 100) : 0;
 
 					const countEl = document.getElementById(`${prefix}-count`);
-					const textEl = document.getElementById(
-						`${prefix}-progress-text`
-					);
+					const textEl = document.getElementById(`${prefix}-progress-text`);
 					const barEl = document.getElementById(`${prefix}-progress-bar`);
 
 					if (countEl) countEl.textContent = `${count}/${total}`;
@@ -590,31 +577,25 @@
 				};
 
 				const updateAllData = () => {
-					console.log(
-						"[DEBUG] updateAllData called at " +
-							new Date().toLocaleTimeString()
-					);
 					const excelProgress = countAcquiredSkills(storageKeys.excel);
 					const wordProgress = countAcquiredSkills(storageKeys.word);
 					const powerpointProgress = countAcquiredSkills(
 						storageKeys.powerpoint
 					);
+
 					const totalAcquired =
 						excelProgress + wordProgress + powerpointProgress;
 					const totalSkills = 60;
-					const globalProgressPercent = Math.round(
-						(totalAcquired / totalSkills) * 100
-					);
-
-					console.log(
-						`[DEBUG] Global Progress: ${totalAcquired}/${totalSkills} (${globalProgressPercent}%)`
-					);
+					const globalProgressPercent =
+						totalSkills > 0
+							? Math.round((totalAcquired / totalSkills) * 100)
+							: 0;
 
 					const acquiredEl = document.getElementById("acquired-skills");
 					const globalEl = document.getElementById("global-progress");
 
 					if (acquiredEl) acquiredEl.textContent = totalAcquired;
-					if (globalEl) globalEl.textContent = globalProgressPercent + "%";
+					if (globalEl) globalEl.textContent = `${globalProgressPercent}%`;
 
 					updateCard("excel", excelProgress);
 					updateCard("word", wordProgress);
@@ -624,22 +605,16 @@
 				updateAllData();
 
 				window.addEventListener("storage", (e) => {
-					console.log("[DEBUG] Storage event triggered:", e.key);
-					if (
-						e.key === storageKeys.excel ||
-						e.key === storageKeys.word ||
-						e.key === storageKeys.powerpoint
-					) {
-						console.log(
-							"[DEBUG] Relevant storage key changed, updating data..."
-						);
+					if (Object.values(storageKeys).includes(e.key)) {
 						updateAllData();
 					}
 				});
 
-				setInterval(() => {
-					updateAllData();
-				}, 2000);
+				document.addEventListener("visibilitychange", () => {
+					if (document.visibilityState === "visible") {
+						updateAllData();
+					}
+				});
 			});
 		</script>
 	</body>
