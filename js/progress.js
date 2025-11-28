@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const loadState = () => {
         // Charger le nom
         if (userNameInput) {
-            const savedName = localStorage.getItem(nameKey);
+        const savedName = localStorage.getItem("userName");
             if (savedName) {
                 userNameInput.value = savedName;
             }
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Listener pour le nom
     if (userNameInput) {
         userNameInput.addEventListener("input", (e) => {
-            localStorage.setItem(nameKey, e.target.value);
+            localStorage.setItem("userName", e.target.value);
         });
     }
 });
