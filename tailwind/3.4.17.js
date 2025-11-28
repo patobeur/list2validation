@@ -3227,45 +3227,59 @@
 						o = Math.max(this.line - 3, 0),
 						l = Math.min(this.line + 2, a.length),
 						c = String(l).length;
-					return a
-						.slice(o, l)
-						.map((f, d) => {
-							let p = o + 1 + d,
-								h = " " + (" " + p).slice(-c) + " | ";
-							if (p === this.line) {
-								if (f.length > 160) {
-									let v = 20,
-										y = Math.max(0, this.column - v),
-										w = Math.max(this.column + v, this.endColumn + v),
-										k = f.slice(y, w),
-										S =
-											i(h.replace(/\d/g, " ")) +
-											f
-												.slice(0, Math.min(this.column - 1, v - 1))
-												.replace(/[^\t]/g, " ");
-									return (
-										n(">") +
-										i(h) +
-										s(k) +
-										`
+					return a.slice(o, l).map((f, d) => {
+						let p = o + 1 + d,
+							h = " " + (" " + p).slice(-c) + " | ";
+						if (p === this.line) {
+							if (f.length > 160) {
+								let v = 20,
+									y = Math.max(0, this.column - v),
+									w = Math.max(this.column + v, this.endColumn + v),
+									k = f.slice(y, w),
+									S =
+										i(h.replace(/\d/g, " ")) +
+										f
+											.slice(0, Math.min(this.column - 1, v - 1))
+											.replace(/[^\t]/g, " ");
+								return (
+									n(">") +
+									i(h) +
+									s(k) +
+									`
  ` +
-										S +
-										n("^")
-									);
-								}
-								let b =
-									i(h.replace(/\d/g, " ")) +
-									f.slice(0, this.column - 1).replace(/[^\t]/g, " ");
-								return n(">") + i(h) + s(f) + ` ` + b + n("^");
+									S +
+									n("^")
+								);
 							}
-							return " " + i(h) + s(f);
-						})
-						.join(``);
+							let b =
+								i(h.replace(/\d/g, " ")) +
+								f.slice(0, this.column - 1).replace(/[^\t]/g, " ");
+							return (
+								n(">") +
+								i(h) +
+								s(f) +
+								`
+ ` +
+								b +
+								n("^")
+							);
+						}
+						return " " + i(h) + s(f);
+					}).join(`
+`);
 				}
 				toString() {
 					let e = this.showSourceCode();
 					return (
-						e && (e = `` + e + ``), this.name + ": " + this.message + e
+						e &&
+							(e =
+								`
+
+` +
+								e +
+								`
+`),
+						this.name + ": " + this.message + e
 					);
 				}
 			};
@@ -3278,9 +3292,12 @@
 		var pc = {
 			after: `
 `,
-			beforeClose: ``,
-			beforeComment: ``,
-			beforeDecl: ``,
+			beforeClose: `
+`,
+			beforeComment: `
+`,
+			beforeDecl: `
+`,
 			beforeOpen: " ",
 			beforeRule: `
 `,
@@ -24740,9 +24757,7 @@ Check your Browserslist config to be sure that your targets are set up correctly
 	function vt(r) {
 		return r && r.__esModule ? r : { default: r };
 	}
-	console.warn(
-		"cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation"
-	);
+
 	var Ns = "tailwind",
 		uf = "text/tailwindcss",
 		_v = "/template.html",
@@ -24839,3 +24854,22 @@ Check your Browserslist config to be sure that your targets are set up correctly
 		}
 	}
 })();
+/*!
+ * fill-range <https://github.com/jonschlinkert/fill-range>
+ *
+ * Copyright (c) 2014-present, Jon Schlinkert.
+ * Licensed under the MIT License.
+ */
+/*!
+ * is-number <https://github.com/jonschlinkert/is-number>
+ *
+ * Copyright (c) 2014-present, Jon Schlinkert.
+ * Released under the MIT License.
+ */
+/*!
+ * to-regex-range <https://github.com/micromatch/to-regex-range>
+ *
+ * Copyright (c) 2015-present, Jon Schlinkert.
+ * Released under the MIT License.
+ */
+/*! https://mths.be/cssesc v3.0.0 by @mathias */

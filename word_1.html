@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Top 20 des Fonctionnalités Word</title>
 		<!-- Chargement de Tailwind CSS -->
-		<script src="tailwind/tailwind.3.4.17.js"></script>
+		<script src="tailwind/3.4.17.js"></script>
 		<!-- Configuration de la police Système (Locale) -->
 		<script>
 			tailwind.config = {
@@ -51,6 +51,19 @@
 				/* blue-900 */
 				border-color: #3b82f6;
 				/* blue-500 */
+			}
+			/* Navigation dropdown */
+			.dropdown:hover .dropdown-menu {
+				opacity: 1;
+				visibility: visible;
+				transform: translateY(0);
+			}
+
+			.dropdown-menu {
+				opacity: 0;
+				visibility: hidden;
+				transform: translateY(-10px);
+				transition: all 0.3s ease;
 			}
 		</style>
 		<style>
@@ -931,47 +944,17 @@
 		</style>
 	</head>
 
-	<body class="bg-gray-100 text-gray-900 flex flex-col min-h-screen">
+	<body class="bg-gray-100 text-gray-900 flex flex-col min-h-screen pt-20">
 		<!-- Barre de Navigation -->
-		<nav class="bg-white shadow-md sticky top-0 z-20">
-			<div
-				class="container mx-auto px-6 py-4 flex justify-between items-center">
-				<div class="flex items-center space-x-4">
-					<a
-						href="index.html"
-						class="text-gray-600 hover:text-blue-700 transition-colors"
-						aria-label="Retour à l'accueil">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							class="h-6 w-6"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="currentColor">
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-						</svg>
-					</a>
-					<h1 class="text-xl md:text-2xl font-bold text-blue-800"
-						>Guide Word</h1
-					>
-				</div>
-				<div
-					class="text-sm text-gray-600 bg-gray-50 px-3 py-1 rounded-full border border-gray-200">
-					Progression :
-					<span id="progress-count" class="font-bold text-blue-700"
-						>13</span
-					>/20
-				</div>
-			</div>
-		</nav>
+		<div id="navbar-container"></div>
 
 		<!-- Contenu Principal -->
 		<main class="container mx-auto p-6 flex-grow">
 			<h2 class="text-3xl font-bold text-center mb-10 text-gray-800"
 				>Top 20 des Fonctionnalités et Raccourcis Word
+				<span class="text-xl font-medium text-gray-500"
+					>(<span id="progress-count">0</span>/20)</span
+				>
 			</h2>
 
 			<!-- Grille des fonctionnalités -->
@@ -1841,20 +1824,18 @@ Ou: Alt + Clic sur un mot</code></pre>
 				<p>© 2025 Guide Word. Contenu généré à titre informatif.</p>
 			</div>
 		</footer>
-
-		<!-- Script de gestion du LocalStorage et des interactions -->
+		<!-- Scripts -->
 		<script>
-			document.addEventListener("DOMContentLoaded", () => {
-				const checkboxes = document.querySelectorAll(".mastery-checkbox");
-				const progressCount = document.getElementById("progress-count");
-				const summaryGrid = document.getElementById("summary-grid");
-				const userNameInput = document.getElementById("user-name");
+			fetch("nav/_navbar.html")
+				.then((response) => response.text())
+				.then((data) => {
+					document.getElementById("navbar-container").innerHTML = data;
+				});
 
-				const STORAGE_KEY = "wordMasteryProgress";
-				const NAME_KEY = "wordMasteryName";
-
-				// Liste des fonctionnalités pour le résumé (Doit correspondre aux data-id)
-				const functionsList = [
+			const pageConfig = {
+				storageKey: "wordMasteryProgress",
+				nameKey: "wordMasteryName",
+				functionsList: [
 					{ id: "copypaste", name: "1. Copier/Coller" },
 					{ id: "undoredo", name: "2. Annuler/Rétablir" },
 					{ id: "save", name: "3. Enregistrer" },
@@ -1875,112 +1856,9 @@ Ou: Alt + Clic sur un mot</code></pre>
 					{ id: "readmode", name: "18. Mode Lecture" },
 					{ id: "smartlookup", name: "19. Recherche Intel." },
 					{ id: "visuals", name: "20. Visuels" },
-				];
-
-				// Initialiser la grille de résumé
-				const initSummary = () => {
-					summaryGrid.innerHTML = "";
-					functionsList.forEach((func) => {
-						const div = document.createElement("div");
-						div.id = `summary-${func.id}`;
-						div.className =
-							"flex items-center justify-between p-2 rounded border border-gray-200 text-xs font-medium text-gray-500 transition-colors";
-						div.innerHTML = `
-                        <span>${func.name}</span>
-                        <span class="status-icon">○</span>
-                    `;
-						summaryGrid.appendChild(div);
-					});
-				};
-
-				// Mettre à jour un élément du résumé
-				const updateSummaryItem = (id, isAcquired) => {
-					const item = document.getElementById(`summary-${id}`);
-					if (item) {
-						if (isAcquired) {
-							item.classList.add("summary-item-acquired");
-							item.classList.remove("bg-white", "text-gray-500");
-							item.querySelector(".status-icon").innerHTML = "✓";
-						} else {
-							item.classList.remove("summary-item-acquired");
-							item.classList.add("bg-white", "text-gray-500");
-							item.querySelector(".status-icon").innerHTML = "○";
-						}
-					}
-				};
-
-				// Charger l'état
-				const loadState = () => {
-					// Charger le nom
-					const savedName = localStorage.getItem(NAME_KEY);
-					if (savedName) {
-						userNameInput.value = savedName;
-					}
-
-					// Charger les cases à cocher
-					const savedState =
-						JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
-					let count = 0;
-
-					checkboxes.forEach((box) => {
-						const id = box.dataset.id;
-						const isChecked = savedState[id] === true;
-
-						if (isChecked) {
-							box.checked = true;
-							count++;
-						}
-
-						markCardAsAcquired(box);
-						updateSummaryItem(id, isChecked);
-					});
-					updateProgress(count);
-				};
-
-				// Sauvegarder l'état
-				const saveState = () => {
-					const state = {};
-					let count = 0;
-					checkboxes.forEach((box) => {
-						state[box.dataset.id] = box.checked;
-						if (box.checked) count++;
-					});
-					localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-					updateProgress(count);
-				};
-
-				// Fonction visuelle carte
-				const markCardAsAcquired = (checkbox) => {
-					const card = checkbox.closest(".bg-white");
-					if (checkbox.checked) {
-						card.classList.add("card-acquired");
-					} else {
-						card.classList.remove("card-acquired");
-					}
-				};
-
-				const updateProgress = (count) => {
-					progressCount.textContent = count;
-				};
-
-				// Initialisation
-				initSummary();
-				loadState();
-
-				// Listeners pour les checkboxes
-				checkboxes.forEach((box) => {
-					box.addEventListener("change", (e) => {
-						markCardAsAcquired(e.target);
-						updateSummaryItem(e.target.dataset.id, e.target.checked);
-						saveState();
-					});
-				});
-
-				// Listener pour le nom
-				userNameInput.addEventListener("input", (e) => {
-					localStorage.setItem(NAME_KEY, e.target.value);
-				});
-			});
+				],
+			};
 		</script>
+		<script src="js/progress.js"></script>
 	</body>
 </html>
