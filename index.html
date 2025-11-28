@@ -447,7 +447,7 @@
 		</footer>
 		<!-- Script de chargement de la barre de navigation -->
 		<script>
-			const navbarUrl = new URL("./list2validation/nav/_navbar.html", window.location.href);
+			const navbarUrl = new URL("nav/_navbar.html", window.location.href);
 			console.log(`[Navbar] Attempting to fetch navbar from: ${navbarUrl}`);
 
 			fetch(navbarUrl)
@@ -472,13 +472,11 @@
 							'<p class="text-red-500 text-center">Erreur: La barre de navigation n\'a pas pu être chargée.</p>';
 					}
 
-
-
-			// fetch("./list2validation/nav/_navbar.html")
-			// 	.then((response) => response.text())
-			// 	.then((data) => {
-			// 		document.getElementById("navbar-container").innerHTML = data;
-			// 	});
+					// fetch("./list2validation/nav/_navbar.html")
+					// 	.then((response) => response.text())
+					// 	.then((data) => {
+					// 		document.getElementById("navbar-container").innerHTML = data;
+				});
 		</script>
 		<!-- Script de récupération des progressions -->
 		<script>

@@ -820,10 +820,27 @@ Choisissez un type : Processus, Hiérarchie, etc.</code></pre>
 		</footer>
 		<!-- Scripts -->
 		<script>
-			fetch("nav/_navbar.html")
-				.then((response) => response.text())
+			fetch(navbarUrl)
+				.then((response) => {
+					if (!response.ok) {
+						throw new Error(
+							`[Navbar] Network response was not ok: ${response.status} ${response.statusText}`
+						);
+					}
+					return response.text();
+				})
 				.then((data) => {
 					document.getElementById("navbar-container").innerHTML = data;
+					console.log("[Navbar] Successfully loaded.");
+				})
+				.catch((error) => {
+					console.error("[Navbar] Fetch Error:", error);
+					const navbarContainer =
+						document.getElementById("navbar-container");
+					if (navbarContainer) {
+						navbarContainer.innerHTML =
+							'<p class="text-red-500 text-center">Erreur: La barre de navigation n\'a pas pu être chargée.</p>';
+					}
 				});
 
 			const pageConfig = {
